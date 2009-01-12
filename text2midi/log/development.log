@@ -1,0 +1,1172 @@
+
+
+Processing ExampleController#index (for 127.0.0.1 at 2009-01-11 09:41:39) [GET]
+
+
+ActionController::UnknownAction (No action responded to index. Actions: download_midi, make_midi, and write_text):
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-11 09:42:09) [GET]
+
+
+ActionController::RoutingError (No route matches "/example/write_text.html.erb" with {:method=>:get}):
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-11 09:43:08) [GET]
+
+
+SyntaxError (/Users/gabrielg/Desktop/text2midi/config/routes.rb:2: syntax error, unexpected ':', expecting kEND
+ map.root :controller => "example" :action=>"write_text"
+                                    ^):
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:255:in `load_routes!'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:236:in `load!'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:250:in `reload'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:148:in `reload_application'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `send'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `evaluate_method'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:166:in `call'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:90:in `run'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:90:in `each'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:90:in `send'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:90:in `run'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:277:in `run_callbacks'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:109:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (32.2ms)
+Rendered /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-11 09:43:19) [GET]
+
+
+ActionController::RoutingError (No route matches "/example/write_text.html.erb" with {:method=>:get}):
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:21:30) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:25:25) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-01-11 18:25:25) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:29:46) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:30:25) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 30ms (View: 25, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:33:07) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:33:12) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:35:18) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:35:23) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:36:39) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:36:42) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:37:25) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:37:27) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:37:28) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:38:30) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:38:30) [POST]
+  Parameters: {"midi_text"=>"new song created in a text to midi generate built on ruby on rails", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:38:36) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:38:37) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:39:02) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:39:04) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:39:07) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:44:42) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 18:44:46) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"6fe867775abffb68f366f8be126cd3380d00840d"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 18:44:48) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:10:30) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:10:34) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:12:04) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:12:06) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:12:12) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:19:59) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:21:01) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:21:02) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 70ms (View: 69, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:21:04) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:22:14) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:22:16) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 20:23:14) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 20:23:17) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 22:59:55) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 65ms (View: 64, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:00:25) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:02:03) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:03:09) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:03:11) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:03:13) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:03:16) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:09:58) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 26ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:10:28) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:11:00) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 72ms (View: 68, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:12:18) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:12:21) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:12:28) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:13:35) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 34ms (View: 31, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:15:43) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:16:19) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:16:22) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:18:01) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:18:12) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:18:53) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:19:19) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:19:20) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 70ms (View: 69, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:19:26) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:19:27) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:20:23) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:20:25) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:20:37) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:21:11) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:21:47) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:21:49) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:21:52) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:22:40) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:23:50) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:24:16) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:24:44) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:25:06) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:25:07) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:27:52) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:28:05) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:28:57) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:28:59) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:29:04) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:30:13) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:30:17) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:31:07) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:31:09) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:35:29) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:35:33) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:35:37) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:37:30) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:37:36) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:38:17) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:39:33) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:39:40) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:40:26) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:41:21) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:41:29) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:41:44) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:42:08) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:42:39) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:50:26) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:51:26) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:52:12) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:52:15) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:52:34) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-11 23:53:28) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-11 23:53:33) [POST]
+  Parameters: {"midi_text"=>"make a song", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:44:08) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:44:15) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 150ms (View: 18, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:44:56) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:44:59) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:51:06) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:51:08) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:52:41) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:54:36) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+
+
+ActionView::TemplateError (No expansion found for :script2) on line #9 of app/views/layouts/application.html.erb:
+6:   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+7:   <title>Songs: <%= controller.action_name %></title>
+8:   <%= stylesheet_link_tag 'main' %>
+9:   <%= javascript_include_tag :defaults ,:script2 %>
+10: </head>
+11: <body>
+12: 
+
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:726:in `determine_source'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:733:in `validate_sources!'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:733:in `collect'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:733:in `validate_sources!'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:775:in `_unmemoized_expand_sources'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:57:in `expand_sources'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:25:in `__send__'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:25:in `memoize_all'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:22:in `each'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:22:in `memoize_all'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/memoizable.rb:17:in `freeze'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:702:in `create'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:700:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:700:in `create'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/asset_tag_helper.rb:257:in `javascript_include_tag'
+    app/views/layouts/application.html.erb:9
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:371:in `_render_with_layout'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/gabrielg/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Users/gabrielg/.gem/ruby/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (121.6ms)
+Rendered /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (22.2ms)
+Rendering /Users/gabrielg/.gem/ruby/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:55:10) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:55:14) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:56:18) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:56:21) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 00:59:27) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 00:59:30) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 01:00:04) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 01:01:17) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 01:01:18) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 01:02:01) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 01:02:04) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-12 01:02:59) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-12 01:03:02) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"326fb6b7c47dc835de27ca47dfcb5d1313553f76"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
