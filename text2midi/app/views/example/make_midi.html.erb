@@ -1,11 +1,11 @@
-
+<div id="drag_item">
+<div id="smallbox">
 <embed src="/midifiles/<%= @filename %>" width="200" height="16" autostart="TRUE" loop="FALSE"> 
 </embed>
-<br/><br/>
-
 <br/>
 <b> Right Click Download to save to your Computer</b>
-<br/>	
 <br/>
 <a href="/midifiles/<%= @filename %>">Download</a>
-<br/><br/><br/>
+</div>
+</div>
+<%= draggable_element "drag_item" %>

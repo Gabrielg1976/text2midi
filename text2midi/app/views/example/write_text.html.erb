@@ -1,14 +1,17 @@
 
-	<h3><b>Within Literature there are endless sonic possibilities</b></h3>
+	<h3>Within Literature there are endless sonic possibilities</h3>
+    <%=link_to image_tag("logo.png", :width=>578, :border=>0)%>
 
-	<%=link_to image_tag("logo.png", :width=>780, :border=>0)%>
-
-
+<div id="drag_item">
+	<div id="smallBox">
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
 </div>
-
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
+</div>
+</div>
+</div>
+<%= draggable_element "drag_item" %>
 
 <br/><br/><br/><br/><br/>
 <div id="midi_result">
