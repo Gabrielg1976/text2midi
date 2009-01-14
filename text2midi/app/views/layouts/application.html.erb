@@ -7,14 +7,10 @@
   <title>Songs: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'main' %>
   <%= javascript_include_tag :defaults %>
- <%= javascript_include_tag 'dragablecontent.js' %>
-<%= draggable_element "drag_item" %>
 </head>
-
 <body>
-<div id="mainContent">
-<%= yield %>
-</div>
-
-</body>
+  <div id="mainContent">
+    <%= yield %>
+  </div>
+ </body>
 </html>

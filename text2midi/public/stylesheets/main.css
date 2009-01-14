@@ -42,7 +42,7 @@ body{
 }
 #mainContent{
 	width:595px;
-	float:left;
+	float:center;
 	padding-left:10px;
 }
 .clear{
@@ -51,10 +51,10 @@ body{
 #smallBox{
 	padding:5px;
 	border:1px dotted #000;
-	background:blue;
+	background:#A06967;
 	margin-bottom:5px;
-	width:577px;
-	float:left;
+	width:350px;
+	float:center;
 }
 #smallBox img{
 	float:left;
@@ -94,3 +94,35 @@ h2,h3,h4{
 	margin-bottom:5px;
 	margin-top:0px;
 }
+
+
+/*
+ The below is to design the  instruments widget*/
+
+
+.roundedcornr_box_609567 {
+	background: url(roundedcornr_609567_tl.png) no-repeat top left;
+}
+.roundedcornr_top_609567 {
+	background: url(roundedcornr_609567_tr.png) no-repeat top right;
+}
+.roundedcornr_bottom_609567 {
+	background: url(roundedcornr_609567_bl.png) no-repeat bottom left;
+}
+.roundedcornr_bottom_609567 div {
+	background: url(roundedcornr_609567_br.png) no-repeat bottom right;
+}
+.roundedcornr_content_609567 {
+	background: url(roundedcornr_609567_r.png) top right repeat-y;
+}
+
+.roundedcornr_top_609567 div,.roundedcornr_top_609567,
+.roundedcornr_bottom_609567 div, .roundedcornr_bottom_609567 {
+	width: 100%;
+	height: 15px;
+	font-size: 1px;
+}
+.roundedcornr_content_609567, .roundedcornr_bottom_609567 {
+	margin-top: -19px;
+}
+.roundedcornr_content_609567 { padding: 0 15px; }

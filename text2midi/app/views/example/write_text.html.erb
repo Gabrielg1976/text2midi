@@ -1,18 +1,20 @@
-
-	<h3>Within Literature there are endless sonic possibilities</h3>
-    <%=link_to image_tag("logo.png", :width=>578, :border=>0)%>
-
+<center>
+<h3>Within Literature there are endless sonic possibilities</h3>
+<h3>A ruby on rails Midi and Audio System</h3>
 <div id="drag_item">
 	<div id="smallBox">
+		<h3>Text 2 Midi Converter</h3>
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
 </div>
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
 </div>
 </div>
-</div>
-<%= draggable_element "drag_item" %>
+
 
 <br/><br/><br/><br/><br/>
 <div id="midi_result">
 </div>
+</div>
+<%= draggable_element "drag_item" %>
+</center>
