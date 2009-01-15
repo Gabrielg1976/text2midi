@@ -5,7 +5,7 @@ body{
 	margin:0px;
 	padding:0px;
 	text-align:center;
-	background-color:#E2EBED;	
+	background-color:#DFDBC3;	
 	font-size:0.9em;	
 }
 #mainContainer{
@@ -20,6 +20,9 @@ body{
 	padding:3px;
 }
 
+a.link {
+	color:b lack;
+}
 
 #leftMenu{
 	width:145px;
@@ -51,7 +54,7 @@ body{
 #smallBox{
 	padding:5px;
 	border:1px dotted #000;
-	background:#A06967;
+	background-image:url("/images/synth.jpg") ;
 	margin-bottom:5px;
 	width:350px;
 	float:center;
