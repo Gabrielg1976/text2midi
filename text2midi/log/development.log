@@ -4204,3 +4204,16 @@ Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-15 16:09:11) [P
 Rendering template within layouts/application
 Rendering example/make_midi
 Completed in 41ms (View: 38, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-15 21:04:23) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 66ms (View: 63, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-15 21:05:15) [POST]
+  Parameters: {"midi_text"=>"this live at the BArCMut Meetup", "authenticity_token"=>"57b832f2177890e900126a22393d10b05592dc83"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 68ms (View: 64, DB: 0) | 200 OK [http://localhost/example/make_midi]
