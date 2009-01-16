@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+ map.resources :chords
+ map.resources :scales
  map.resources :users
  map.resource :session
  map.resources :example

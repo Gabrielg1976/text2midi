@@ -1,0 +1,22 @@
+<h1>Listing chords</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pattern</th>
+  </tr>
+
+<% for chord in @chords %>
+  <tr>
+    <td><%=h chord.name %></td>
+    <td><%=h chord.pattern %></td>
+    <td><%= link_to 'Show', chord %></td>
+    <td><%= link_to 'Edit', edit_chord_path(chord) %></td>
+    <td><%= link_to 'Destroy', chord, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New chord', new_chord_path %>

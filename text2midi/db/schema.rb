@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090114073343) do
+ActiveRecord::Schema.define(:version => 20090116000723) do
+
+  create_table "chords", :force => true do |t|
+    t.string   "name"
+    t.string   "pattern"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scales", :force => true do |t|
+    t.string   "name"
+    t.string   "pattern"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"

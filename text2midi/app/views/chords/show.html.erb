@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @chord.name %>
+</p>
+
+<p>
+  <b>Pattern:</b>
+  <%=h @chord.pattern %>
+</p>
+
+
+<%= link_to 'Edit', edit_chord_path(@chord) %> |
+<%= link_to 'Back', chords_path %>

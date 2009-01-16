@@ -1,0 +1,22 @@
+<h1>Listing scales</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pattern</th>
+  </tr>
+
+<% for scale in @scales %>
+  <tr>
+    <td><%=h scale.name %></td>
+    <td><%=h scale.pattern %></td>
+    <td><%= link_to 'Show', scale %></td>
+    <td><%= link_to 'Edit', edit_scale_path(scale) %></td>
+    <td><%= link_to 'Destroy', scale, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New scale', new_scale_path %>
