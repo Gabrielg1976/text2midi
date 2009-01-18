@@ -28,9 +28,9 @@ class String
     self.each_byte do |letter|
     number = letter.to_i
       
-      temp_1 = number-midi_min
-      temp_2 = midi_max - low
-      midi_note = (midi_min + ((temp_1) * (temp_2)/high)).to_i
+    temp_1 = number-midi_min
+    temp_2 = midi_max - low
+    midi_note = (midi_min + ((temp_1) * (temp_2)/high)).to_i
       
       #midi_note = (midi_min + ((number-midi_min) * (midi_max-low)/high)).to_i
       

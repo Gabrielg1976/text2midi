@@ -4352,3 +4352,90 @@ Processing ArpegSynthController#arp_synth (for 127.0.0.1 at 2009-01-15 21:25:00)
 Rendering template within layouts/application
 Rendering arpeg_synth/arp_synth
 Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/arpeg_synth/arp_synth]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:43:20) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 110ms (View: 107, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:45:20) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 34ms (View: 30, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:45:52) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-18 13:46:07) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"4b45201c08d9072b7f70e469a90d9d2535eff75e"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 33ms (View: 30, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:47:10) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:49:32) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-18 13:49:36) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"4b45201c08d9072b7f70e469a90d9d2535eff75e"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:50:18) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:51:36) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-18 13:51:38) [POST]
+  Parameters: {"midi_text"=>"put text here", "authenticity_token"=>"4b45201c08d9072b7f70e469a90d9d2535eff75e"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:56:57) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:57:42) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 13:59:27) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-18 14:00:33) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]

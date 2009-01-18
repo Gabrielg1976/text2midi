@@ -1,24 +1,46 @@
-<center>
+
 <h3>Within Literature there are endless sonic possibilities</h3>
 <h3>A ruby on rails Midi and Audio System</h3>
 
 <h4>Dragable online widget Instruments</h4>
 <b><p> Enter text below to create a new Composition.</p></b> 
 
+
+
+
+
+
+
 <div id="drag_item">
-	<div id="smallBox">
-		<h3>Text 2 Midi Converter</h3>
+	
+
+<div>
+  <b class="instrument">
+  <b class="instrument1"><b></b></b>
+  <b class="instrument2"><b></b></b>
+  <b class="instrument3"></b>
+  <b class="instrument4"></b>
+  <b class="instrument5"></b></b>
+   <div class="instrumentfg">
+ <h3>Text 2 Midi Converter</h3>
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
 </div>
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
 </div>
+
+  <b class="instrument">
+  <b class="instrument5"></b>
+  <b class="instrument4"></b>
+  <b class="instrument3"></b>
+  <b class="instrument2"><b></b></b>
+  <b class="instrument1"><b></b></b></b>
 </div>
 
 
-<br/><br/><br/><br/><br/>
+
+<br/>
 <div id="midi_result">
 </div>
 </div>
 <%= draggable_element "drag_item" %>
-</center>

@@ -102,30 +102,39 @@ h2,h3,h4{
 /*
  The below is to design the  instruments widget*/
 
-
-.roundedcornr_box_609567 {
-	background: url(roundedcornr_609567_tl.png) no-repeat top left;
-}
-.roundedcornr_top_609567 {
-	background: url(roundedcornr_609567_tr.png) no-repeat top right;
-}
-.roundedcornr_bottom_609567 {
-	background: url(roundedcornr_609567_bl.png) no-repeat bottom left;
-}
-.roundedcornr_bottom_609567 div {
-	background: url(roundedcornr_609567_br.png) no-repeat bottom right;
-}
-.roundedcornr_content_609567 {
-	background: url(roundedcornr_609567_r.png) top right repeat-y;
-}
-
-.roundedcornr_top_609567 div,.roundedcornr_top_609567,
-.roundedcornr_bottom_609567 div, .roundedcornr_bottom_609567 {
-	width: 100%;
-	height: 15px;
-	font-size: 1px;
-}
-.roundedcornr_content_609567, .roundedcornr_bottom_609567 {
-	margin-top: -19px;
-}
-.roundedcornr_content_609567 { padding: 0 15px; }
+.instrument{display:block}
+.instrument *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:#b20000}
+.instrument1{
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #870000;
+  border-right:1px solid #870000;
+  background:#9f0000}
+.instrument2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #6f0000;
+  border-right:1px solid #6f0000;
+  background:#a30000}
+.instrument3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #a30000;
+  border-right:1px solid #a30000;}
+.instrument4{
+  border-left:1px solid #870000;
+  border-right:1px solid #870000}
+.instrument5{
+  border-left:1px solid #9f0000;
+  border-right:1px solid #9f0000}
+.instrumentfg{
+  background:#b20000}
