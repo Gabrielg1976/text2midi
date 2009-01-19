@@ -5,42 +5,46 @@
 <h4>Dragable online widget Instruments</h4>
 <b><p> Enter text below to create a new Composition.</p></b> 
 
-
-
-
-
-
-
 <div id="drag_item">
-	
-
-<div>
-  <b class="instrument">
-  <b class="instrument1"><b></b></b>
-  <b class="instrument2"><b></b></b>
-  <b class="instrument3"></b>
-  <b class="instrument4"></b>
-  <b class="instrument5"></b></b>
-   <div class="instrumentfg">
+   
+<!-- This is the start of the instrument widget -->
+<div class="instrumentfg">
+	<br/>
  <h3>Text 2 Midi Converter</h3>
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
 </div>
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
-</div>
-
-  <b class="instrument">
-  <b class="instrument5"></b>
-  <b class="instrument4"></b>
-  <b class="instrument3"></b>
-  <b class="instrument2"><b></b></b>
-  <b class="instrument1"><b></b></b></b>
-</div>
-
-
-
 <br/>
+
+<%= hidden_field_tag 'tempo', 40 %>
+
+<h5>Tempo</h5>
+<div style="padding-left:250px">
+	<div id="track1" style="width:100px; background-color:#ccc; height:10px;">
+		<div id="handle1" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
+	</div>
+<p id="debug3">&nbsp;</p>
+<!-- This is the end of the widget functions -->
+</div>
+</div>
 <div id="midi_result">
 </div>
 </div>
+
+<!-- Controls the The slider info -->
+<script type="text/javascript" language="javascript">
+// <![CDATA[
+// horizontal slider control with preset values
+	new Control.Slider('handle1', 'track1', {
+		range: $R(40, 200),
+		values: [40,45,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200],
+		sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
+		onSlide: function(v){ $('debug3').innerHTML = 'tempo: ' + v; $('tempo').value = v; },
+		onChange: function(v){ $('debug3').innerHTML = 'tempo changed to: ' + v }
+	});
+
+	
+// ]]>
+</script>
 <%= draggable_element "drag_item" %>
