@@ -13,11 +13,11 @@
  <h3>Text 2 Midi Converter</h3>
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
+	<%= hidden_field_tag 'tempo', 40 %>
 </div>
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
 <br/>
 
-<%= hidden_field_tag 'tempo', 40 %>
 
 <h5>Tempo</h5>
 <div style="padding-left:250px">

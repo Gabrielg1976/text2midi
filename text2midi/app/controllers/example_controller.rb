@@ -6,7 +6,7 @@ class ExampleController < ApplicationController
   
   def make_midi
     if params[:midi_text]
-      temp = params[:midi_text].to_midi
+       temp = params[:midi_text].to_midi(params[:tempo].to_i)
       @filename = temp.split("/").last
     else
       render :text => "ERROR"
