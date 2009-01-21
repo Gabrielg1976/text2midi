@@ -21,7 +21,7 @@ body{
 }
 
 a.link {
-	color:b lack;
+	color:black;
 }
 
 #leftMenu{
@@ -48,51 +48,10 @@ a.link {
 	float:center;
 	padding-left:10px;
 }
-.clear{
-	clear:both;
-}
-#smallBox{
-	padding:5px;
-	border:1px dotted #000;
-	background-image:url("/images/synth.jpg") ;
-	margin-bottom:5px;
-	width:350px;
-	float:center;
-}
-#smallBox img{
-	float:left;
-	padding:3px;
-	
-}
-#smallBox2{
-	padding:5px;
-	border:1px dotted #000;
-	background-color:yellow;
-	margin-bottom:5px;
-	width:577px;
-	float:left;
-}
-#smallBox2 img{
-	float:right;
-	padding:3px;
-	
+/*.clear{
+	clear:both;*/
 }
 
-#smallBox3{
-	padding:5px;
-	border:1px dotted #000;
-	background-color:#DDD;
-	margin-bottom:5px;
-	margin-right:5px;
-	width:280px;
-	float:left;
-}
-
-#smallBox3 img{
-	float:right;
-	padding:3px;	
-
-}
 h2,h3,h4{
 	margin-bottom:5px;
 	margin-top:0px;
@@ -102,39 +61,8 @@ h2,h3,h4{
 /*
  The below is to design the  instruments widget*/
 
-.instrument{display:block}
-.instrument *{
-  display:block;
-  height:1px;
-  overflow:hidden;
-  font-size:.01em;
-  background:#b20000}
-.instrument1{
-  margin-left:3px;
-  margin-right:3px;
-  padding-left:1px;
-  padding-right:1px;
-  border-left:1px solid #870000;
-  border-right:1px solid #870000;
-  background:#9f0000}
-.instrument2{
-  margin-left:1px;
-  margin-right:1px;
-  padding-right:1px;
-  padding-left:1px;
-  border-left:1px solid #6f0000;
-  border-right:1px solid #6f0000;
-  background:#a30000}
-.instrument3{
-  margin-left:1px;
-  margin-right:1px;
-  border-left:1px solid #a30000;
-  border-right:1px solid #a30000;}
-.instrument4{
-  border-left:1px solid #870000;
-  border-right:1px solid #870000}
-.instrument5{
-  border-left:1px solid #9f0000;
-  border-right:1px solid #9f0000}
+.instrumentfg1{
+  background-image:url("/images/splayer.jpg")}
+
 .instrumentfg{
-  background:#b20000}
+  background-image:url("/images/bigbackgreen.jpg")}

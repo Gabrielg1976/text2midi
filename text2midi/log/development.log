@@ -7572,3 +7572,253 @@ Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 16:44:11) [
 Rendering template within layouts/application
 Rendering example/write_text
 Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:12:17) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 40ms (View: 37, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:12:27) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"19", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"75"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:14:07) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"55", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"145"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 44ms (View: 41, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:18:55) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:19:53) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:20:12) [POST]
+  Parameters: {"midi_text"=>"something new\n\n", "instr"=>"11", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"140"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 36ms (View: 33, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:21:00) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:21:08) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"79", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"110"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:21:24) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"34", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"110"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:21:28) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"34", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"110"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:21:36) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"70", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"65"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:21:55) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"51", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"65"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 72ms (View: 69, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:23:05) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:23:51) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:24:20) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:24:22) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:24:36) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:24:38) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:25:24) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:25:33) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:28:14) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:28:30) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:29:06) [POST]
+  Parameters: {"midi_text"=>"thank you to BArCMuT", "instr"=>"51", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"105"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:30:15) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:31:06) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:31:23) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:44:47) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 42ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:45:07) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"54", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"90"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:51:18) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:51:20) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 19:51:34) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 19:51:36) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 20:05:11) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 20:05:18) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 20:06:36) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 20:06:38) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 20:20:16) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-20 20:20:33) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 68ms (View: 67, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 20:20:44) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"65", "authenticity_token"=>"a5fe593f287c0e298a876b47560dac8dc7688193", "tempo"=>"155"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]

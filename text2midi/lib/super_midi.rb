@@ -10,7 +10,7 @@ end
 class String
   
   
-  def to_midi(tempo=40,instr=0 ,file = nil, note_length='half')
+  def to_midi(tempo=40,instr=0,file = nil, note_length='half')
     midi_max = 108.0
     midi_min = 21.0
     file = "#{RAILS_ROOT}/#{SuperMidi::FILE_DIRECTORY}/#{Time.now.to_f.to_s}.mid" unless file
