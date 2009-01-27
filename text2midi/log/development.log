@@ -7822,3 +7822,96 @@ Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-20 20:20:44) [P
 Rendering template within layouts/application
 Rendering example/make_midi
 Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-21 22:25:43) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 136ms (View: 133, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-21 22:26:41) [POST]
+  Parameters: {"midi_text"=>"thank for watching this demo ", "instr"=>"70", "authenticity_token"=>"c34a701a6846a04687cb9ef57eb3964928a078fa", "tempo"=>"100"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 30ms (View: 27, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-22 19:07:37) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 180ms (View: 177, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-22 19:08:00) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"e33908eaefa602763db20cead34751c48ecc28ae", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 30ms (View: 27, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-22 19:08:15) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-22 20:51:15) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"0", "authenticity_token"=>"e33908eaefa602763db20cead34751c48ecc28ae", "tempo"=>"40"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#make_midi (for 127.0.0.1 at 2009-01-22 20:51:27) [POST]
+  Parameters: {"midi_text"=>"put text here", "instr"=>"51", "authenticity_token"=>"e33908eaefa602763db20cead34751c48ecc28ae", "tempo"=>"180"}
+Rendering template within layouts/application
+Rendering example/make_midi
+Completed in 68ms (View: 65, DB: 0) | 200 OK [http://localhost/example/make_midi]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-22 22:56:03) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExampleController#write_text (for 127.0.0.1 at 2009-01-22 22:56:04) [GET]
+Rendering template within layouts/application
+Rendering example/write_text
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (22.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCREATE TABLE "chords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pattern" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "scales" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pattern" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(255), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090116000723')[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090114073343')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090116000621')[0m
