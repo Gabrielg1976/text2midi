@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MIDI::Tempo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MIDI::Tempo</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/midilib/event_rb.html">
+                lib/midilib/event.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="MetaEvent.html">
+                MetaEvent
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000186">bpm_to_mpq</a>&nbsp;&nbsp;
+      <a href="#M000191">data_as_bytes</a>&nbsp;&nbsp;
+      <a href="#M000187">mpq_to_bpm</a>&nbsp;&nbsp;
+      <a href="#M000188">new</a>&nbsp;&nbsp;
+      <a href="#M000189">tempo</a>&nbsp;&nbsp;
+      <a href="#M000190">tempo=</a>&nbsp;&nbsp;
+      <a href="#M000192">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MICROSECS_PER_MINUTE</td>
+          <td>=</td>
+          <td class="context-item-value">1_000_000 * 60</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000186" class="method-detail">
+        <a name="M000186"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000186.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000186.html');return false;">
+          <span class="method-name">bpm_to_mpq</span><span class="method-args">(bpm)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translates beats per minute to microseconds per quarter note (beat).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000187" class="method-detail">
+        <a name="M000187"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000187.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000187.html');return false;">
+          <span class="method-name">mpq_to_bpm</span><span class="method-args">(mpq)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translates microseconds per quarter note (beat) to beats per minute.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000188.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000188.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(msecs_per_qnote, delta_time = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000191.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000191.html');return false;">
+          <span class="method-name">data_as_bytes</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000189.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000189.html');return false;">
+          <span class="method-name">tempo</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000190.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000190.html');return false;">
+          <span class="method-name">tempo=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000192" class="method-detail">
+        <a name="M000192"></a>
+
+        <div class="method-heading">
+          <a href="Tempo.src/M000192.html" target="Code" class="method-signature"
+            onclick="popupCode('Tempo.src/M000192.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sun Jan 04 21:29:11 -0500 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>midilib</h1>
+<p>
+midilib is a pure Ruby <a href="../classes/MIDI.html">MIDI</a> library
+useful for reading and writing standard <a
+href="../classes/MIDI.html">MIDI</a> files and manipulating <a
+href="../classes/MIDI.html">MIDI</a> event data. Classes include <a
+href="../classes/MIDI/Sequence.html">MIDI::Sequence</a>, <a
+href="../classes/MIDI/Track.html">MIDI::Track</a>, <a
+href="../classes/MIDI/Event.html">MIDI::Event</a>, and <a
+href="../classes/MIDI/IO/MIDIFile.html">MIDI::IO::MIDIFile</a> and its
+subclasses <a
+href="../classes/MIDI/IO/SeqReader.html">MIDI::IO::SeqReader</a> and <a
+href="../classes/MIDI/IO/SeqWriter.html">MIDI::IO::SeqWriter</a>.
+</p>
+<p>
+The Web site of midilib is (<a
+href="http://midilib.rubyforge.org">midilib.rubyforge.org</a>). The
+RubyForge project page is <a
+href="http://rubyforge.org/projects/midilib">rubyforge.org/projects/midilib</a>,
+where the latest version of midilib may be downloaded. midilib is also
+available as a RubyGem.
+</p>
+<h2>Dependencies</h2>
+<p>
+midilib does not require any other packages. The test suite in the tests
+directory requires the testing framework TestUnit, which comes with Ruby
+1.8 and later and can also be found in the Ruby Application Archive (<a
+href="http://raa.ruby-lang.org">raa.ruby-lang.org</a>).
+</p>
+<p>
+To rebuild the gem or RDocs or run the tests easily, you can use the
+Rakefile which requires Rake (<a
+href="http://rake.rubyforge.org">rake.rubyforge.org</a>).
+</p>
+<h2>Installation</h2>
+<h3>RubyGems Installation</h3>
+<p>
+To install midilib as a gem, type
+</p>
+<pre>
+    % gem install midilib
+</pre>
+<p>
+or
+</p>
+<pre>
+    % gem update midilib
+</pre>
+<p>
+if you already have a previous version. You may need root privileges to
+install or update the gem.
+</p>
+<h3>Manual Installation</h3>
+<p>
+After downloading and expanding the archive, you can install midilib with
+the command
+</p>
+<pre>
+    % ruby install.rb
+</pre>
+<p>
+(or)
+</p>
+<pre>
+    % ruby install.rb --install-dir=my_directory
+</pre>
+<p>
+You may need root privileges to install.
+</p>
+<h2>Testing</h2>
+<pre>
+  % rake test
+</pre>
+<p>
+runs all of the tests in the test directory.
+</p>
+<h2>Overview</h2>
+<p>
+<a href="../classes/MIDI.html">MIDI</a> file <a
+href="../classes/IO.html">IO</a> only understands <a
+href="../classes/MIDI.html">MIDI</a> file format 1, where a sequence is
+made up of multiple tracks. It doesn&#8216;t yet understand format 0 (a
+single track containing all events) or format 2 (a collection of format 0
+files in one file).
+</p>
+<h3><a href="../classes/MIDI/Sequence.html">MIDI::Sequence</a></h3>
+<p>
+A sequence contains a collection of tracks and global information like the
+sequence&#8216;s pulses per quarter note (ppqn) and time signature.
+</p>
+<p>
+The first track in a sequence is special; it holds meta-events like tempo
+and sequence name. Don&#8216;t put any notes in this track.
+</p>
+<p>
+<a href="../classes/MIDI/Sequence.html">MIDI::Sequence</a> also contains
+some convenience methods that let you set and retrieve the sequence&#8216;s
+name, the time signature, and to retrieve the first tempo event&#8216;s
+beats-per-minute value.
+</p>
+<p>
+Normally instances of <a
+href="../classes/MIDI/IO/SeqReader.html">MIDI::IO::SeqReader</a> and <a
+href="../classes/MIDI/IO/SeqWriter.html">MIDI::IO::SeqWriter</a> are used
+when a sequence reads itself from or writes itself to a <a
+href="../classes/MIDI.html">MIDI</a> file. You can change that by setting a
+sequence&#8216;s reader_class or writer_class attributes. Instances of the
+classes contained in those attributes are created and used whenever the
+sequence reads or writes itself.
+</p>
+<h3><a href="../classes/MIDI/Track.html">MIDI::Track</a></h3>
+<p>
+A track contains an array of events.
+</p>
+<p>
+When you modify the <tt>events</tt> array, make sure to call recalc_times
+so each event gets its <tt>time_from_start</tt> recalculated. You
+don&#8216;t have to do that after every event you add; just remember to do
+so before using the track in a way that expects the list of events to be
+ordered correctly.
+</p>
+<p>
+A Track also holds a bit mask that specifies the channels used by the
+track. This bit mask is set when the track is read from the <a
+href="../classes/MIDI.html">MIDI</a> file by a SeqReader but is
+<em>not</em> kept up to date by any other methods. Specifically, if you add
+events to a track at any other time, the bit mask will not be updated.
+</p>
+<h3><a href="../classes/MIDI/Measure.html">MIDI::Measure</a></h3>
+<p>
+This class contains information about a measure from the sequence. Measure
+data is based on the time signature information from the sequence and is
+not stored in the sequence itself.
+</p>
+<h3><a href="../classes/MIDI/Measures.html">MIDI::Measures</a></h3>
+<p>
+The class <a href="../classes/MIDI/Sequence.html">MIDI::Sequence</a> method
+get_measures returns a <a
+href="../classes/MIDI/Measures.html">MIDI::Measures</a> object. <a
+href="../classes/MIDI/Measures.html">MIDI::Measures</a> is a subclass of
+Array. It is a specialized container for <a
+href="../classes/MIDI/Measure.html">MIDI::Measure</a> objects, which can be
+use to map event times to measure numbers. Please note that this object has
+to be remade when events are deleted/added in the sequence.
+</p>
+<p>
+<a href="../classes/MIDI/Measure.html">MIDI::Measure</a> and <a
+href="../classes/MIDI/Measures.html">MIDI::Measures</a> are brought to us
+by Jari Williamsson &lt;jari.williamsson@mailbox.swipnet.se&gt;, who also
+contributed some improvements to the <a
+href="../classes/MIDI/Event.html">MIDI::Event</a> and <a
+href="../classes/MIDI/Track.html">MIDI::Track</a> classes.
+</p>
+<h3><a href="../classes/MIDI/Event.html">MIDI::Event</a></h3>
+<p>
+Each event holds not only its delta time but also its time from the start
+of the track. The track is responsible for recalculating its events&#8217;
+start times. You can call MIDI::Track#recalc_times to do so.
+</p>
+<p>
+Events have a number of boolean methods that identify their types, like
+channel?, note?, note_on?, note_off?, meta?, system?, realtime?, and
+program_change?. Events know how to print themselves. By default, all
+numbers are printed as hexidecimal and channel numbers are printed from
+0-15. Setting print_decimal_numbers to true will output decimal numbers and
+setting print_channel_numbers_from_one will output channel numbers from
+1-16.
+</p>
+<p>
+Subclasses of <a href="../classes/MIDI/Event.html">MIDI::Event</a>
+implement the various <a href="../classes/MIDI.html">MIDI</a> messages such
+as note on and off, controller values, system exclusive data, and realtime
+bytes.
+</p>
+<p>
+<a href="../classes/MIDI/Realtime.html">MIDI::Realtime</a> events have
+delta values and start times, just like all the other midilib event types
+do. (<a href="../classes/MIDI.html">MIDI</a> real time status bytes
+don&#8216;t have delta times, but this way we can record when in a track
+the realtime byte was received and should be sent. This is useful for
+start/continue/stop events that control other devices, for example.) Note
+that when a <a href="../classes/MIDI/Realtime.html">MIDI::Realtime</a>
+event is written out to a <a href="../classes/MIDI.html">MIDI</a> file, the
+delta time is not written.
+</p>
+<h2>How To Use</h2>
+<p>
+The following examples show you how to use midilib to read, write, and
+manipulate <a href="../classes/MIDI.html">MIDI</a> files and modify track
+events. See also the files in the examples directory, which are described
+below.
+</p>
+<h3>Reading a <a href="../classes/MIDI.html">MIDI</a> File</h3>
+<p>
+To read a <a href="../classes/MIDI.html">MIDI</a> file, create a <a
+href="../classes/MIDI/Sequence.html">MIDI::Sequence</a> object and call its
+read method, passing in an <a href="../classes/IO.html">IO</a> object.
+</p>
+<p>
+The read method takes an optional block. If present, the block is called
+once after each track has finished being read. Each time, it is passed the
+total number of tracks and the number of the current track that has just
+been read. This is useful for notifying the user of progress, for example
+by updating a GUI progress bar.
+</p>
+<pre>
+ require 'midi/io/seqreader'
+
+ # Create a new, empty sequence.
+ seq = MIDI::Sequence.new()
+
+ # Read the contents of a MIDI file into the sequence.
+ File.open('my_midi_file.mid', 'rb') { | file |
+     seq.read(file) { | num_tracks, i |
+         # Print something when each track is read.
+         puts &quot;read track #{i} of #{num_tracks}&quot;
+     }
+ }
+</pre>
+<h3>Writing a <a href="../classes/MIDI.html">MIDI</a> File</h3>
+<p>
+To write a <a href="../classes/MIDI.html">MIDI</a> file, call the write
+method, passing in an <a href="../classes/IO.html">IO</a> object.
+</p>
+<pre>
+ require 'midi/io/seqwriter'
+
+ # Start with a sequence that has something worth saving.
+ seq = read_or_create_seq_we_care_not_how()
+
+ # Write the sequence to a MIDI file.
+ File.open('my_output_file.mid', 'wb') { | file | seq.write(file) }
+</pre>
+<h3>Editing a <a href="../classes/MIDI.html">MIDI</a> File</h3>
+<p>
+Combining the last two examples, here is a script that reads a <a
+href="../classes/MIDI.html">MIDI</a> file, transposes some events, and
+writes the sequence out to a different file. This is a useful template for
+programatically manipulating <a href="../classes/MIDI.html">MIDI</a> data.
+</p>
+<p>
+This code transposes all of the note events (note on, note off, and poly
+pressure) on channel 5 down one octave. It&#8216;s easy to find events that
+need to be transposed: the method note? returns true.
+</p>
+<h4>Transposing One Channel</h4>
+<pre>
+ require 'midi/io/seqreader'
+ require 'midi/io/seqwriter'
+
+ # Create a new, empty sequence.
+ seq = MIDI::Sequence.new()
+
+ # Read the contents of a MIDI file into the sequence.
+ File.open('my_input_file.mid', 'rb') { | file |
+     seq.read(file) { | num_tracks, i |
+         # Print something when each track is read.
+         puts &quot;read track #{i} of #{num_tracks}&quot;
+     }
+ }
+
+ # Iterate over every event in every track.
+ seq.each { | track |
+     track.each { | event |
+         # If the event is a note event (note on, note off, or poly
+         # pressure) and it is on MIDI channel 5 (channels start at
+         # 0, so we use 4), then transpose the event down one octave.
+         if event.note? &amp;&amp; event.channel == 4
+             event.note -= 12
+         end
+     }
+ }
+
+ # Write the sequence to a MIDI file.
+ File.open('my_output_file.mid', 'wb') { | file | seq.write(file) }
+</pre>
+<h3>Manipulating tracks</h3>
+<p>
+If you modify a track&#8216;s list of events directly, don&#8216;t forget
+to call MIDI::Track#recalc_times when you are done.
+</p>
+<pre>
+ track.events[42, 1] = array_of_events
+ track.events &lt;&lt; an_event
+ track.merge(array_of_events)
+ track.recalc_times
+</pre>
+<h3>Calculating delta times</h3>
+<p>
+A few methods in <a href="../classes/MIDI/Sequence.html">MIDI::Sequence</a>
+make it easier to calculate the delta times that represent note lengths.
+MIDI::Sequence#length_to_delta takes a note length (a multiple of a quarter
+note) and returns the delta time given the sequence&#8216;s current ppqn
+(pulses per quarter note) setting. 1 is a quarter note, 1.0/32.0 is a 32nd
+note (use floating-point numbers to avoid integer rounding), 1.5 is a
+dotted quarter, etc. See the documentation for that method for more
+information.
+</p>
+<p>
+MIDI::Sequence#note_to_length takes a note name and returns a length value
+(again, as a multiple of a quarter note). Legal note names are those found
+in MIDI::Sequence::NOTE_TO_LENGTH, and may begin with &quot;dotted&quot;
+and/or end with &quot;triplet&quot;. For example, &quot;whole&quot;,
+&quot;sixteenth&quot;, &quot;32nd&quot;, &quot;quarter triplet&quot;,
+&quot;dotted 16th&quot;, and &quot;dotted 8th triplet&quot; are all legal
+note names.
+</p>
+<p>
+Finally, MIDI::Sequence#note_to_delta takes a note name and returns a delta
+time. It does this by calling note_to_length, then passing the result to
+length_to_delta.
+</p>
+<h3>Example Scripts</h3>
+<p>
+Here are short descriptions of each of the examples found in the examples
+directory.
+</p>
+<ul>
+<li>examples/from_scratch.rb shows you how to create a new sequence from
+scratch and save it to a <a href="../classes/MIDI.html">MIDI</a> file. It
+creates a file called &#8216;from_scratch.mid&#8217;.
+
+</li>
+<li>examples/seq2text.rb dumps a <a href="../classes/MIDI.html">MIDI</a> file
+as text. It reads in a sequence and uses the to_s method of each event.
+
+</li>
+<li>examples/reader2text.rb dumps a <a href="../classes/MIDI.html">MIDI</a>
+file as text. It subclasses MIDI::SeqReader instead of creating a sequence
+containing tracks and events.
+
+</li>
+<li>examples/transpose.rb transposes all note events (note on, note off, poly
+pressure) on a specified channel by a specified amount.
+
+</li>
+<li>There is also one <a href="../classes/MIDI.html">MIDI</a> file,
+examples/NoFences.mid. It is a little pop ditty I wrote. The instruments in
+this file use General <a href="../classes/MIDI.html">MIDI</a> patch numbers
+and drum note assignments. Since I don&#8216;t normally use GM patches, the
+sounds used here are at best approximations of the sounds I use.
+
+</li>
+</ul>
+<h2>Resources</h2>
+<p>
+The Ruby Web site (<a
+href="http://www.ruby-lang.org/en/index.html">www.ruby-lang.org/en/index.html</a>)
+contains an introduction to Ruby, the Ruby Application Archive (RAA) at <a
+href="http://raa.ruby-lang.org">raa.ruby-lang.org</a>, and pointers to more
+information.
+</p>
+<p>
+&lt;cite&gt;Programming Ruby, The Pragmatic Programmer&#8216;s
+Guide&lt;/cite&gt;, by David Thomas and Andrew Hunt, is a well-written and
+practical introduction to Ruby. Its Web page at <a
+href="http://www.rubycentral.com/book">www.rubycentral.com/book</a> also
+contains a wealth of Ruby information. Though the first edition book is
+available online, I encourage you to purchase a copy of the latest edition.
+</p>
+<p>
+A description of the <a href="../classes/MIDI.html">MIDI</a> file format
+can be found in a few places such as <a
+href="http://www.borg.com/~jglatt/tech/midifile.htm">www.borg.com/~jglatt/tech/midifile.htm</a>.
+</p>
+<p>
+The <a href="../classes/MIDI.html">MIDI</a> message reference at <a
+href="http://www.io.com/~jimm/midi_ref.html">www.io.com/~jimm/midi_ref.html</a>
+describes the format of <a href="../classes/MIDI.html">MIDI</a> commands.
+</p>
+<h1>To Do</h1>
+<h2>Bugs</h2>
+<ul>
+<li>Track#recalc_delta_from_times needs to use a stable sorting algorithm. See
+Adam&#8216;s notes at <a
+href="http://github.com/adamjmurray/cosy/wikis/midilib-notes">github.com/adamjmurray/cosy/wikis/midilib-notes</a>
+and solution at <a
+href="http://github.com/adamjmurray/cosy/tree/master/lib/cosy/renderer/midi_file_renderer.rb">github.com/adamjmurray/cosy/tree/master/lib/cosy/renderer/midi_file_renderer.rb</a>.
+Adam has given me permission to include his fix.
+
+</li>
+</ul>
+<h2>Features</h2>
+<ul>
+<li>Method to translate event&#8216;s time_from_start to number of milliseconds
+from start.
+
+</li>
+<li>Swing quantizing. (Implied by list email from Carl Youngblood
+&lt;carl.youngblood@gmail.com&gt;)
+
+</li>
+<li>Implement key signature in SeqReader.
+
+</li>
+<li>Format 0 files.
+
+</li>
+<li>Format 2 files(?).
+
+</li>
+</ul>
+<h2>Documentation</h2>
+<ul>
+<li>Write better docs.
+
+</li>
+</ul>
+<h2>Tests</h2>
+<ul>
+<li>Tests for Adam&#8216;s stable sorting algorithm.
+
+</li>
+<li>Tests for Noah Thorp&#8216;s midilib bug fixes.
+
+</li>
+</ul>
+<h1>Support</h1>
+<ul>
+<li>Visit the forums, bug list, and mailing list pages at <a
+href="http://rubyforge.org/projects/midilib">rubyforge.org/projects/midilib</a>
+
+</li>
+<li>Send email to Jim Menard at <a href="mailto:jimm@io.com">jimm@io.com</a>
+
+</li>
+<li>Ask on the ruby-talk mailing list
+
+</li>
+</ul>
+<h1>Administrivia</h1>
+<table>
+<tr><td valign="top">Author:</td><td>Jim Menard (<a href="mailto:jimm@io.com">jimm@io.com</a>)
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright (c) 2003-2009 Jim Menard
+
+</td></tr>
+<tr><td valign="top">License:</td><td>Distributed under the same license as Ruby.
+
+</td></tr>
+</table>
+<h2>Copying</h2>
+<p>
+midilib is copyrighted free software by Jim Menard and is released under
+the same license as Ruby. See the Ruby license at <a
+href="http://www.ruby-lang.org/en/LICENSE.txt">www.ruby-lang.org/en/LICENSE.txt</a>.
+</p>
+<p>
+midilib may be freely copied in its entirety providing this notice, all
+source code, all documentation, and all other files are included.
+</p>
+<p>
+midilib is Copyright (c) 2003-2009 by Jim Menard.
+</p>
+<p>
+The song &quot;No Fences&quot; contained in the <a
+href="../classes/MIDI.html">MIDI</a> file examples/NoFences.mid is
+Copyright (c) 1992 by Jim Menard (jimm@io.com). It may be freely used for
+non-commercial purposes as long as the author is given credit.
+</p>
+<h3>Recent Changes</h3>
+<h4>Changes for 1.2.0:</h4>
+<p>
+Use byte arrays instead of strings for passing around data. All tests now
+pass for both Ruby 1.8.X and 1.9.X.
+</p>
+<h4>New code repository</h4>
+<p>
+The midilib code is now hosted at Github (<a
+href="http://github.com/jimm/midilib">github.com/jimm/midilib</a>).
+</p>
+<h4>Changes for 1.1.4:</h4>
+<ul>
+<li>Fixed a bug in KeySig.data_as_bytes. Thanks to Noah Thorp for finding this
+and the bug fixed in 1.1.3.
+
+</li>
+</ul>
+<h4>Changes for 1.1.3:</h4>
+<ul>
+<li>Fixed the way midilib detects the behavior of IO.getc.
+
+</li>
+</ul>
+<h4>Changes for 1.1.2:</h4>
+<ul>
+<li>Define MIDI::IO::MIDIFile.getc differently for different Ruby versions,
+instead of checking for String.bytes every time we read a byte.
+
+</li>
+</ul>
+<h4>Changes for 1.1.1:</h4>
+<ul>
+<li>Make MIDI::IO::MIDIFile.getc do the right thing for both Ruby 1.8 and 1.9.
+
+</li>
+</ul>
+<h4>Changes for 1.1.0:</h4>
+<ul>
+<li>Added test/test.mid to list of files to be included when packaging midifile
+for distribution.
+
+</li>
+</ul>
+<h4>Changes for 1.0.0:</h4>
+<ul>
+<li>Fixed the bug in Track#recalc_delta_from_times found by Christopher Rose.
+
+</li>
+</ul>
+<h4>Changes for 0.8.7:</h4>
+<ul>
+<li>Fixed the misspelled POLY_PRESSURE constant, thanks to Mario Pehle.
+
+</li>
+</ul>
+<h4>Changes for 0.8.6:</h4>
+<ul>
+<li>Added missing test/test.mid.
+
+</li>
+</ul>
+<h4>Changes for 0.8.5:</h4>
+<ul>
+<li>Fixed bugs in <a href="../classes/MIDI/PitchBend.html">MIDI::PitchBend</a>
+reading and writing, thanks to Emanuel Borsboom.
+
+</li>
+<li>Fixed a bug in MIDI::Track#quantize.
+
+</li>
+<li>The argument to MIDI::Track#quantize has changed: it is now either a note
+name (&quot;sixteenth&quot;, &quot;32nd&quot;, &quot;8th triplet&quot;) or
+a length (1 = quarter, 0.25 = sixteenth). This is a drastic change that
+will break all previous calls to quantize. However, since that method was
+broken already, I don&#8216;t feel it&#8216;s a burden to anybody to change
+the arguments.
+
+</li>
+</ul>
+<h4>Changes for 0.8.4:</h4>
+<ul>
+<li>Realtime status bytes now set @is_realtime to true and return true when
+realtime? is called.
+
+</li>
+<li>All system common events now set @is_system to true and return true when
+system? is called, not just system exclusive events.
+
+</li>
+<li>Added examples/from_scratch.rb, which shows how to create a sequence
+manually.
+
+</li>
+<li>New <a href="../classes/MIDI/Sequence.html">MIDI::Sequence</a> methods that
+turn note length names like &quot;32nd&quot;, &quot;dotted quarter&quot;,
+and &quot;16th triplet&quot; into delta times. See the docs below and
+MIDI::Sequence::length_to_delta, MIDI::Sequence::note_to_length, and
+MIDI::Sequence::note_to_delta.
+
+</li>
+</ul>
+<h4>Changes for 0.8.3:</h4>
+<ul>
+<li>Added MIDI::NoteEvent.note_to_s, which returns note name as a string like
+&quot;C4&quot; or &quot;F#6&quot;.
+
+</li>
+<li>Added new boolean attributes to <a
+href="../classes/MIDI/Event.html">MIDI::Event</a>: @print_decimal_numbers
+and @print_note_names. These are used by all Event to_s methods. See
+examples/seq2text.rb for an example.
+
+</li>
+</ul>
+<h4>Changes for 0.8.2:</h4>
+<ul>
+<li>Changed MIDI::MetaEvent.type to MIDI::MetaEvent.event_type to avoid runtime
+complaints about Object#type calls.
+
+</li>
+<li>Added &#8216;b&#8217; binary flag to file open modes for Windows.
+
+</li>
+<li>Fixed $LOAD_PATH in example files.
+
+</li>
+<li>Fixed read and write block arguments.
+
+</li>
+<li>Fixed other example script bugs.
+
+</li>
+</ul>
+<h4>Changes for 0.8.1:</h4>
+<ul>
+<li>Fixed track sorting.
+
+</li>
+<li>Fixed track&#8216;s recalc_delta_from_times method.
+
+</li>
+<li>Fixed event quantization.
+
+</li>
+<li>More tests and documentation.
+
+</li>
+</ul>
+<h2>Warranty</h2>
+<p>
+This software is provided &quot;as is&quot; and without any express or
+implied warranties, including, without limitation, the implied warranties
+of merchantability and fitness for a particular purpose.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

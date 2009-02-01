@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: MIDI</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">MIDI</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/midilib/consts_rb.html">
+                lib/midilib/consts.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/event_rb.html">
+                lib/midilib/event.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/info_rb.html">
+                lib/midilib/info.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/io/midifile_rb.html">
+                lib/midilib/io/midifile.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/io/seqreader_rb.html">
+                lib/midilib/io/seqreader.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/io/seqwriter_rb.html">
+                lib/midilib/io/seqwriter.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/measure_rb.html">
+                lib/midilib/measure.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/sequence_rb.html">
+                lib/midilib/sequence.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/track_rb.html">
+                lib/midilib/track.rb
+                </a>
+        <br />
+                <a href="../files/lib/midilib/utils_rb.html">
+                lib/midilib/utils.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="MIDI.html">MIDI</a> constants.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="MIDI/IO.html" class="link">MIDI::IO</a><br />
+Class <a href="MIDI/ActiveSense.html" class="link">MIDI::ActiveSense</a><br />
+Class <a href="MIDI/ChannelEvent.html" class="link">MIDI::ChannelEvent</a><br />
+Class <a href="MIDI/ChannelPressure.html" class="link">MIDI::ChannelPressure</a><br />
+Class <a href="MIDI/Clock.html" class="link">MIDI::Clock</a><br />
+Class <a href="MIDI/Continue.html" class="link">MIDI::Continue</a><br />
+Class <a href="MIDI/Controller.html" class="link">MIDI::Controller</a><br />
+Class <a href="MIDI/Event.html" class="link">MIDI::Event</a><br />
+Class <a href="MIDI/KeySig.html" class="link">MIDI::KeySig</a><br />
+Class <a href="MIDI/Marker.html" class="link">MIDI::Marker</a><br />
+Class <a href="MIDI/Measure.html" class="link">MIDI::Measure</a><br />
+Class <a href="MIDI/Measures.html" class="link">MIDI::Measures</a><br />
+Class <a href="MIDI/MetaEvent.html" class="link">MIDI::MetaEvent</a><br />
+Class <a href="MIDI/NoteEvent.html" class="link">MIDI::NoteEvent</a><br />
+Class <a href="MIDI/NoteOffEvent.html" class="link">MIDI::NoteOffEvent</a><br />
+Class <a href="MIDI/NoteOnEvent.html" class="link">MIDI::NoteOnEvent</a><br />
+Class <a href="MIDI/PitchBend.html" class="link">MIDI::PitchBend</a><br />
+Class <a href="MIDI/PolyPressure.html" class="link">MIDI::PolyPressure</a><br />
+Class <a href="MIDI/ProgramChange.html" class="link">MIDI::ProgramChange</a><br />
+Class <a href="MIDI/Realtime.html" class="link">MIDI::Realtime</a><br />
+Class <a href="MIDI/Sequence.html" class="link">MIDI::Sequence</a><br />
+Class <a href="MIDI/SongPointer.html" class="link">MIDI::SongPointer</a><br />
+Class <a href="MIDI/SongSelect.html" class="link">MIDI::SongSelect</a><br />
+Class <a href="MIDI/Start.html" class="link">MIDI::Start</a><br />
+Class <a href="MIDI/Stop.html" class="link">MIDI::Stop</a><br />
+Class <a href="MIDI/SystemCommon.html" class="link">MIDI::SystemCommon</a><br />
+Class <a href="MIDI/SystemExclusive.html" class="link">MIDI::SystemExclusive</a><br />
+Class <a href="MIDI/SystemReset.html" class="link">MIDI::SystemReset</a><br />
+Class <a href="MIDI/Tempo.html" class="link">MIDI::Tempo</a><br />
+Class <a href="MIDI/TimeSig.html" class="link">MIDI::TimeSig</a><br />
+Class <a href="MIDI/Track.html" class="link">MIDI::Track</a><br />
+Class <a href="MIDI/TuneRequest.html" class="link">MIDI::TuneRequest</a><br />
+Class <a href="MIDI/Utils.html" class="link">MIDI::Utils</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MIDI_CHANNELS</td>
+          <td>=</td>
+          <td class="context-item-value">16</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Number of <a href="MIDI.html">MIDI</a> channels
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NOTES_PER_CHANNEL</td>
+          <td>=</td>
+          <td class="context-item-value">128</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Number of note per <a href="MIDI.html">MIDI</a> channel
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_EVENT</td>
+          <td>=</td>
+          <td class="context-item-value">0xff</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_SEQ_NUM</td>
+          <td>=</td>
+          <td class="context-item-value">0x00</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_TEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x01</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_COPYRIGHT</td>
+          <td>=</td>
+          <td class="context-item-value">0x02</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_SEQ_NAME</td>
+          <td>=</td>
+          <td class="context-item-value">0x03</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_INSTRUMENT</td>
+          <td>=</td>
+          <td class="context-item-value">0x04</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_LYRIC</td>
+          <td>=</td>
+          <td class="context-item-value">0x05</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_MARKER</td>
+          <td>=</td>
+          <td class="context-item-value">0x06</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_CUE</td>
+          <td>=</td>
+          <td class="context-item-value">0x07</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_MIDI_CHAN_PREFIX</td>
+          <td>=</td>
+          <td class="context-item-value">0x20</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_TRACK_END</td>
+          <td>=</td>
+          <td class="context-item-value">0x2f</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_SET_TEMPO</td>
+          <td>=</td>
+          <td class="context-item-value">0x51</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_SMPTE</td>
+          <td>=</td>
+          <td class="context-item-value">0x54</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_TIME_SIG</td>
+          <td>=</td>
+          <td class="context-item-value">0x58</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_KEY_SIG</td>
+          <td>=</td>
+          <td class="context-item-value">0x59</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">META_SEQ_SPECIF</td>
+          <td>=</td>
+          <td class="context-item-value">0x7f</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NOTE_OFF</td>
+          <td>=</td>
+          <td class="context-item-value">0x80</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Note, val
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NOTE_ON</td>
+          <td>=</td>
+          <td class="context-item-value">0x90</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Note, val
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">POLY_PRESSURE</td>
+          <td>=</td>
+          <td class="context-item-value">0xA0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Note, val
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTROLLER</td>
+          <td>=</td>
+          <td class="context-item-value">0xB0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Controller.html">Controller</a> #, val
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PROGRAM_CHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0xC0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Program number
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CHANNEL_PRESSURE</td>
+          <td>=</td>
+          <td class="context-item-value">0xD0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Channel pressure
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PITCH_BEND</td>
+          <td>=</td>
+          <td class="context-item-value">0xE0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+LSB, MSB
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SYSEX</td>
+          <td>=</td>
+          <td class="context-item-value">0xF0</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+System exclusive start
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SONG_POINTER</td>
+          <td>=</td>
+          <td class="context-item-value">0xF2</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Beats from top: LSB/MSB 6 ticks = 1 beat
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SONG_SELECT</td>
+          <td>=</td>
+          <td class="context-item-value">0xF3</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Val = number of song
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TUNE_REQUEST</td>
+          <td>=</td>
+          <td class="context-item-value">0xF6</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Tune request
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">EOX</td>
+          <td>=</td>
+          <td class="context-item-value">0xF7</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+End of system exclusive
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CLOCK</td>
+          <td>=</td>
+          <td class="context-item-value">0xF8</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI.html">MIDI</a> clock (24 per quarter note)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">START</td>
+          <td>=</td>
+          <td class="context-item-value">0xFA</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Sequence.html">Sequence</a> start
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTINUE</td>
+          <td>=</td>
+          <td class="context-item-value">0xFB</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Sequence.html">Sequence</a> continue
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STOP</td>
+          <td>=</td>
+          <td class="context-item-value">0xFC</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Sequence.html">Sequence</a> stop
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ACTIVE_SENSE</td>
+          <td>=</td>
+          <td class="context-item-value">0xFE</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Active sensing (sent every 300 ms when nothing else being sent)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SYSTEM_RESET</td>
+          <td>=</td>
+          <td class="context-item-value">0xFF</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+System reset
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_MOD_WHEEL</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Controller.html">Controller</a> numbers
+
+<h1>0 - 31 = continuous, LSB</h1>
+<h1>32 - 63 = continuous, MSB</h1>
+<h1>64 - 97 = switches</h1>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_BREATH_CONTROLLER</td>
+          <td>=</td>
+          <td class="context-item-value">2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_FOOT_CONTROLLER</td>
+          <td>=</td>
+          <td class="context-item-value">4</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_PORTAMENTO_TIME</td>
+          <td>=</td>
+          <td class="context-item-value">5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_DATA_ENTRY_MSB</td>
+          <td>=</td>
+          <td class="context-item-value">6</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_VOLUME</td>
+          <td>=</td>
+          <td class="context-item-value">7</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_BALANCE</td>
+          <td>=</td>
+          <td class="context-item-value">8</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_PAN</td>
+          <td>=</td>
+          <td class="context-item-value">10</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_EXPRESSION_CONTROLLER</td>
+          <td>=</td>
+          <td class="context-item-value">11</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_1</td>
+          <td>=</td>
+          <td class="context-item-value">16</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_2</td>
+          <td>=</td>
+          <td class="context-item-value">17</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_3</td>
+          <td>=</td>
+          <td class="context-item-value">18</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_4</td>
+          <td>=</td>
+          <td class="context-item-value">19</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_DATA_ENTRY_LSB</td>
+          <td>=</td>
+          <td class="context-item-value">38</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc"><dl>
+<dt>32 - 63</dt><dd>are LSB for [0 - 31]
+
+</dd>
+</dl>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_SUSTAIN</td>
+          <td>=</td>
+          <td class="context-item-value">64</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_PORTAMENTO</td>
+          <td>=</td>
+          <td class="context-item-value">65</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_SUSTENUTO</td>
+          <td>=</td>
+          <td class="context-item-value">66</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_SOFT_PEDAL</td>
+          <td>=</td>
+          <td class="context-item-value">67</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_HOLD_2</td>
+          <td>=</td>
+          <td class="context-item-value">69</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_5</td>
+          <td>=</td>
+          <td class="context-item-value">50</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_6</td>
+          <td>=</td>
+          <td class="context-item-value">51</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_7</td>
+          <td>=</td>
+          <td class="context-item-value">52</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_GEN_PURPOSE_8</td>
+          <td>=</td>
+          <td class="context-item-value">53</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_TREMELO_DEPTH</td>
+          <td>=</td>
+          <td class="context-item-value">92</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_CHORUS_DEPTH</td>
+          <td>=</td>
+          <td class="context-item-value">93</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_DETUNE_DEPTH</td>
+          <td>=</td>
+          <td class="context-item-value">94</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_PHASER_DEPTH</td>
+          <td>=</td>
+          <td class="context-item-value">95</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_DATA_INCREMENT</td>
+          <td>=</td>
+          <td class="context-item-value">96</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_DATA_DECREMENT</td>
+          <td>=</td>
+          <td class="context-item-value">97</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_NREG_PARAM_LSB</td>
+          <td>=</td>
+          <td class="context-item-value">98</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_NREG_PARAM_MSB</td>
+          <td>=</td>
+          <td class="context-item-value">99</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_REG_PARAM_LSB</td>
+          <td>=</td>
+          <td class="context-item-value">100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CC_REG_PARAM_MSB</td>
+          <td>=</td>
+          <td class="context-item-value">101</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_LOCAL_CONTROL</td>
+          <td>=</td>
+          <td class="context-item-value">0x7A</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Val 0 == off, 0x7f == on
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_ALL_NOTES_OFF</td>
+          <td>=</td>
+          <td class="context-item-value">0x7B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_OMNI_MODE_OFF</td>
+          <td>=</td>
+          <td class="context-item-value">0x7C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_OMNI_MODE_ON</td>
+          <td>=</td>
+          <td class="context-item-value">0x7D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_MONO_MODE_ON</td>
+          <td>=</td>
+          <td class="context-item-value">0x7E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CM_POLY_MODE_ON</td>
+          <td>=</td>
+          <td class="context-item-value">0x7F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTROLLER_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">[         &quot;0&quot;,         &quot;Modulation&quot;,         &quot;Breath Control&quot;,         &quot;3&quot;,         &quot;Foot Controller&quot;,         &quot;Portamento Time&quot;,         &quot;Data Entry&quot;,         &quot;Volume&quot;,         &quot;Balance&quot;,         &quot;9&quot;,         &quot;Pan&quot;,         &quot;Expression Control&quot;,         &quot;12&quot;, &quot;13&quot;, &quot;14&quot;, &quot;15&quot;,         &quot;General Controller 1&quot;,         &quot;General Controller 2&quot;,         &quot;General Controller 3&quot;,         &quot;General Controller 4&quot;,         &quot;20&quot;, &quot;21&quot;, &quot;22&quot;, &quot;23&quot;, &quot;24&quot;, &quot;25&quot;, &quot;26&quot;, &quot;27&quot;, &quot;28&quot;, &quot;29&quot;,         &quot;30&quot;, &quot;31&quot;,         &quot;32&quot;, &quot;33&quot;, &quot;34&quot;, &quot;35&quot;, &quot;36&quot;, &quot;37&quot;, &quot;38&quot;, &quot;39&quot;, &quot;40&quot;, &quot;41&quot;,         &quot;42&quot;, &quot;43&quot;, &quot;44&quot;, &quot;45&quot;, &quot;46&quot;, &quot;47&quot;, &quot;48&quot;, &quot;49&quot;, &quot;50&quot;, &quot;51&quot;,         &quot;52&quot;, &quot;53&quot;, &quot;54&quot;, &quot;55&quot;, &quot;56&quot;, &quot;57&quot;, &quot;58&quot;, &quot;59&quot;, &quot;60&quot;, &quot;61&quot;,         &quot;62&quot;, &quot;63&quot;,         &quot;Sustain Pedal&quot;,         &quot;Portamento&quot;,         &quot;Sostenuto&quot;,         &quot;Soft Pedal&quot;,         &quot;68&quot;,         &quot;Hold 2&quot;,         &quot;70&quot;, &quot;71&quot;, &quot;72&quot;, &quot;73&quot;, &quot;74&quot;, &quot;75&quot;, &quot;76&quot;, &quot;77&quot;, &quot;78&quot;, &quot;79&quot;,         &quot;General Controller 5&quot;,         &quot;Tempo Change&quot;,         &quot;General Controller 7&quot;,         &quot;General Controller 8&quot;,         &quot;84&quot;, &quot;85&quot;, &quot;86&quot;, &quot;87&quot;, &quot;88&quot;, &quot;89&quot;, &quot;90&quot;,         &quot;External Effects Depth&quot;,         &quot;Tremolo Depth&quot;,         &quot;Chorus Depth&quot;,         &quot;Detune (Celeste) Depth&quot;,         &quot;Phaser Depth&quot;,         &quot;Data Increment&quot;,         &quot;Data Decrement&quot;,         &quot;Non-Registered Param LSB&quot;,         &quot;Non-Registered Param MSB&quot;,         &quot;Registered Param LSB&quot;,         &quot;Registered Param MSB&quot;,         &quot;102&quot;, &quot;103&quot;, &quot;104&quot;, &quot;105&quot;, &quot;106&quot;, &quot;107&quot;, &quot;108&quot;, &quot;109&quot;,         &quot;110&quot;, &quot;111&quot;, &quot;112&quot;, &quot;113&quot;, &quot;114&quot;, &quot;115&quot;, &quot;116&quot;, &quot;117&quot;,         &quot;118&quot;, &quot;119&quot;, &quot;120&quot;,         &quot;Reset All Controllers&quot;,         &quot;Local Control&quot;,         &quot;All Notes Off&quot;,         &quot;Omni Mode Off&quot;,         &quot;Omni Mode On&quot;,         &quot;Mono Mode On&quot;,         &quot;Poly Mode On&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="MIDI/Controller.html">Controller</a> names
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GM_PATCH_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">[   #--   # Pianos   #++         &quot;Acoustic Grand Piano&quot;,         &quot;Bright Acoustic Piano&quot;,         &quot;Electric Grand Piano&quot;,         &quot;Honky-tonk Piano&quot;,         &quot;Electric Piano 1&quot;,         &quot;Electric Piano 2&quot;,         &quot;Harpsichord&quot;,         &quot;Clavichord&quot;,   #--   # Tuned Idiophones   #++         &quot;Celesta&quot;,         &quot;Glockenspiel&quot;,         &quot;Music Box&quot;,         &quot;Vibraphone&quot;,         &quot;Marimba&quot;,         &quot;Xylophone&quot;,         &quot;Tubular Bells&quot;,         &quot;Dulcimer&quot;,   #--   # Organs   #++         &quot;Drawbar Organ&quot;,         &quot;Percussive Organ&quot;,         &quot;Rock Organ&quot;,         &quot;Church Organ&quot;,         &quot;Reed Organ&quot;,         &quot;Accordion&quot;,         &quot;Harmonica&quot;,         &quot;Tango Accordion&quot;,   #--   # Guitars   #++         &quot;Acoustic Guitar (nylon)&quot;,         &quot;Acoustic Guitar (steel)&quot;,         &quot;Electric Guitar (jazz)&quot;,         &quot;Electric Guitar (clean)&quot;,         &quot;Electric Guitar (muted)&quot;,         &quot;Overdriven Guitar&quot;,         &quot;Distortion Guitar&quot;,         &quot;Guitar harmonics&quot;,   #--   # Basses   #++         &quot;Acoustic Bass&quot;,         &quot;Electric Bass (finger)&quot;,         &quot;Electric Bass (pick)&quot;,         &quot;Fretless Bass&quot;,         &quot;Slap Bass 1&quot;,         &quot;Slap Bass 2&quot;,         &quot;Synth Bass 1&quot;,         &quot;Synth Bass 2&quot;,   #--   # Strings   #++         &quot;Violin&quot;,         &quot;Viola&quot;,         &quot;Cello&quot;,         &quot;Contrabass&quot;,         &quot;Tremolo Strings&quot;,         &quot;Pizzicato Strings&quot;,         &quot;Orchestral Harp&quot;,         &quot;Timpani&quot;,   #--   # Ensemble strings and voices   #++         &quot;String Ensemble 1&quot;,         &quot;String Ensemble 2&quot;,         &quot;SynthStrings 1&quot;,         &quot;SynthStrings 2&quot;,         &quot;Choir Aahs&quot;,         &quot;Voice Oohs&quot;,         &quot;Synth Voice&quot;,         &quot;Orchestra Hit&quot;,   #--   # Brass   #++         &quot;Trumpet&quot;,         &quot;Trombone&quot;,         &quot;Tuba&quot;,         &quot;Muted Trumpet&quot;,         &quot;French Horn&quot;,         &quot;Brass Section&quot;,         &quot;SynthBrass 1&quot;,         &quot;SynthBrass 2&quot;,   #--   # Reeds   #++         &quot;Soprano Sax&quot;,         # 64         &quot;Alto Sax&quot;,         &quot;Tenor Sax&quot;,         &quot;Baritone Sax&quot;,         &quot;Oboe&quot;,         &quot;English Horn&quot;,         &quot;Bassoon&quot;,         &quot;Clarinet&quot;,   #--   # Pipes   #++         &quot;Piccolo&quot;,         &quot;Flute&quot;,         &quot;Recorder&quot;,         &quot;Pan Flute&quot;,         &quot;Blown Bottle&quot;,         &quot;Shakuhachi&quot;,         &quot;Whistle&quot;,         &quot;Ocarina&quot;,   #--   # Synth Leads   #++         &quot;Lead 1 (square)&quot;,         &quot;Lead 2 (sawtooth)&quot;,         &quot;Lead 3 (calliope)&quot;,         &quot;Lead 4 (chiff)&quot;,         &quot;Lead 5 (charang)&quot;,         &quot;Lead 6 (voice)&quot;,         &quot;Lead 7 (fifths)&quot;,         &quot;Lead 8 (bass + lead)&quot;,   #--   # Synth Pads   #++         &quot;Pad 1 (new age)&quot;,         &quot;Pad 2 (warm)&quot;,         &quot;Pad 3 (polysynth)&quot;,         &quot;Pad 4 (choir)&quot;,         &quot;Pad 5 (bowed)&quot;,         &quot;Pad 6 (metallic)&quot;,         &quot;Pad 7 (halo)&quot;,         &quot;Pad 8 (sweep)&quot;,   #--   # Effects   #++         &quot;FX 1 (rain)&quot;,         &quot;FX 2 (soundtrack)&quot;,         &quot;FX 3 (crystal)&quot;,         &quot;FX 4 (atmosphere)&quot;,         &quot;FX 5 (brightness)&quot;,         &quot;FX 6 (goblins)&quot;,         &quot;FX 7 (echoes)&quot;,         &quot;FX 8 (sci-fi)&quot;,   #--   # Ethnic   #++         &quot;Sitar&quot;,         &quot;Banjo&quot;,         &quot;Shamisen&quot;,         &quot;Koto&quot;,         &quot;Kalimba&quot;,         &quot;Bag pipe&quot;,         &quot;Fiddle&quot;,         &quot;Shanai&quot;,   #--   # Percussion   #++         &quot;Tinkle Bell&quot;,         &quot;Agogo&quot;,         &quot;Steel Drums&quot;,         &quot;Woodblock&quot;,         &quot;Taiko Drum&quot;,         &quot;Melodic Tom&quot;,         &quot;Synth Drum&quot;,         &quot;Reverse Cymbal&quot;,   #--   # Sound Effects   #++         &quot;Guitar Fret Noise&quot;,         &quot;Breath Noise&quot;,         &quot;Seashore&quot;,         &quot;Bird Tweet&quot;,         &quot;Telephone Ring&quot;,         &quot;Helicopter&quot;,         &quot;Applause&quot;,         &quot;Gunshot&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+General <a href="MIDI.html">MIDI</a> patch names
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GM_DRUM_NOTE_LOWEST</td>
+          <td>=</td>
+          <td class="context-item-value">35</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+GM drum notes start at 35 (C), so subtrack GM_DRUM_NOTE_LOWEST from your
+note number before using this array.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GM_DRUM_NOTE_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">[         &quot;Acoustic Bass Drum&quot;,  # 35, C         &quot;Bass Drum 1&quot;,         # 36, C#         &quot;Side Stick&quot;,          # 37, D         &quot;Acoustic Snare&quot;,      # 38, D#         &quot;Hand Clap&quot;,           # 39, E         &quot;Electric Snare&quot;,      # 40, F         &quot;Low Floor Tom&quot;,       # 41, F#         &quot;Closed Hi Hat&quot;,       # 42, G         &quot;High Floor Tom&quot;,      # 43, G#         &quot;Pedal Hi-Hat&quot;,                # 44, A         &quot;Low Tom&quot;,             # 45, A#         &quot;Open Hi-Hat&quot;,         # 46, B         &quot;Low-Mid Tom&quot;,         # 47, C         &quot;Hi Mid Tom&quot;,          # 48, C#         &quot;Crash Cymbal 1&quot;,      # 49, D         &quot;High Tom&quot;,            # 50, D#         &quot;Ride Cymbal 1&quot;,       # 51, E         &quot;Chinese Cymbal&quot;,      # 52, F         &quot;Ride Bell&quot;,           # 53, F#         &quot;Tambourine&quot;,          # 54, G         &quot;Splash Cymbal&quot;,       # 55, G#         &quot;Cowbell&quot;,             # 56, A         &quot;Crash Cymbal 2&quot;,      # 57, A#         &quot;Vibraslap&quot;,           # 58, B         &quot;Ride Cymbal 2&quot;,       # 59, C         &quot;Hi Bongo&quot;,            # 60, C#         &quot;Low Bongo&quot;,           # 61, D         &quot;Mute Hi Conga&quot;,       # 62, D#         &quot;Open Hi Conga&quot;,       # 63, E         &quot;Low Conga&quot;,           # 64, F         &quot;High Timbale&quot;,                # 65, F#         &quot;Low Timbale&quot;,         # 66, G         &quot;High Agogo&quot;,          # 67, G#         &quot;Low Agogo&quot;,           # 68, A         &quot;Cabasa&quot;,              # 69, A#         &quot;Maracas&quot;,             # 70, B         &quot;Short Whistle&quot;,       # 71, C         &quot;Long Whistle&quot;,                # 72, C#         &quot;Short Guiro&quot;,         # 73, D         &quot;Long Guiro&quot;,          # 74, D#         &quot;Claves&quot;,              # 75, E         &quot;Hi Wood Block&quot;,       # 76, F         &quot;Low Wood Block&quot;,      # 77, F#         &quot;Mute Cuica&quot;,          # 78, G         &quot;Open Cuica&quot;,          # 79, G#         &quot;Mute Triangle&quot;,       # 80, A         &quot;Open Triangle&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+General <a href="MIDI.html">MIDI</a> drum channel note names.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION_MAJOR</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION_MINOR</td>
+          <td>=</td>
+          <td class="context-item-value">2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION_TWEAK</td>
+          <td>=</td>
+          <td class="context-item-value">0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Version</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;#{VERSION_MAJOR}.#{VERSION_MINOR}.#{VERSION_TWEAK}&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Copyright</td>
+          <td>=</td>
+          <td class="context-item-value">'Copyright (c) 2003-2009 by Jim Menard &lt;jimm@io.com&gt;'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

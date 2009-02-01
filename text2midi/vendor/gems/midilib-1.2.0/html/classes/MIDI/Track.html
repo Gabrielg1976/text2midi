@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MIDI::Track</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MIDI::Track</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/midilib/track_rb.html">
+                lib/midilib/track.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A <a href="Track.html">Track</a> is a list of events.
+</p>
+<p>
+When you modify the <tt>events</tt> array, make sure to call <a
+href="Track.html#M000081">recalc_times</a> so <a
+href="Track.html#M000083">each</a> <a href="Event.html">Event</a> gets its
+<tt>time_from_start</tt> recalculated.
+</p>
+<p>
+A <a href="Track.html">Track</a> also holds a bitmask that specifies the
+channels used by the track. This bitmask is set when the track is read from
+the <a href="../MIDI.html">MIDI</a> file by an <a
+href="IO/SeqReader.html">IO::SeqReader</a> but is <em>not</em> kept up to
+date by any other methods.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000083">each</a>&nbsp;&nbsp;
+      <a href="#M000078">merge</a>&nbsp;&nbsp;
+      <a href="#M000079">merge_event_lists</a>&nbsp;&nbsp;
+      <a href="#M000076">name</a>&nbsp;&nbsp;
+      <a href="#M000077">name=</a>&nbsp;&nbsp;
+      <a href="#M000075">new</a>&nbsp;&nbsp;
+      <a href="#M000080">quantize</a>&nbsp;&nbsp;
+      <a href="#M000082">recalc_delta_from_times</a>&nbsp;&nbsp;
+      <a href="#M000081">recalc_times</a>&nbsp;&nbsp;
+      <a href="#M000084">sort</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Enumerable</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNNAMED</td>
+          <td>=</td>
+          <td class="context-item-value">'Unnamed'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">channels_used</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">events</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">instrument</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">sequence</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000075.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000075.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(sequence)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000083.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000083.html');return false;">
+          <span class="method-name">each</span><span class="method-args">( {|event| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Iterate over events.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000078.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000078.html');return false;">
+          <span class="method-name">merge</span><span class="method-args">(event_list)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Merges an array of events into our event list. After merging, the
+events&#8217; time_from_start values are correct so you don&#8216;t need to
+worry about calling <a href="Track.html#M000081">recalc_times</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000079.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000079.html');return false;">
+          <span class="method-name">merge_event_lists</span><span class="method-args">(list1, list2)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Merges two event arrays together. Does not modify this track.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000076.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000076.html');return false;">
+          <span class="method-name">name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return track <a href="Track.html#M000076">name</a>. If there is no <a
+href="Track.html#M000076">name</a>, return UNNAMED.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000077.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000077.html');return false;">
+          <span class="method-name">name=</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set track <a href="Track.html#M000076">name</a>. Replaces or creates a <a
+href="Track.html#M000076">name</a> meta-event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000080.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000080.html');return false;">
+          <span class="method-name">quantize</span><span class="method-args">(length_or_note)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Quantize every event. length_or_note is either a length (1 = quarter, 0.25
+= sixteenth, 4 = whole note) or a note <a
+href="Track.html#M000076">name</a> (&quot;sixteenth&quot;,
+&quot;32nd&quot;, &quot;8th triplet&quot;, &quot;dotted quarter&quot;).
+</p>
+<p>
+Since <a href="Track.html#M000083">each</a> event&#8216;s time_from_start
+is modified, we call <a
+href="Track.html#M000082">recalc_delta_from_times</a> after <a
+href="Track.html#M000083">each</a> event quantizes itself.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000082.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000082.html');return false;">
+          <span class="method-name">recalc_delta_from_times</span><span class="method-args">(starting_at=0, list=@events)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The opposite of <a href="Track.html#M000081">recalc_times</a>: recalculates
+delta_time for <a href="Track.html#M000083">each</a> event from <a
+href="Track.html#M000083">each</a> event&#8216;s time_from_start. This is
+useful, for example, when merging two event lists. As a side-effect,
+elements from starting_at are sorted by time_from_start.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000081.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000081.html');return false;">
+          <span class="method-name">recalc_times</span><span class="method-args">(starting_at=0, list=@events)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Recalculate start times for all events in <tt>list</tt> from starting_at to
+end.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
+
+        <div class="method-heading">
+          <a href="Track.src/M000084.html" target="Code" class="method-signature"
+            onclick="popupCode('Track.src/M000084.html');return false;">
+          <span class="method-name">sort</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sort events by their time_from_start. After sorting, <a
+href="Track.html#M000082">recalc_delta_from_times</a> is called to make
+sure that the delta times reflect the possibly <a
+href="Track.html#M000075">new</a> event order.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

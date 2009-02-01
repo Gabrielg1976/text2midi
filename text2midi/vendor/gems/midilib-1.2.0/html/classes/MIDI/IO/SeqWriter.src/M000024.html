@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>write_track (MIDI::IO::SeqWriter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/seqwriter.rb, line 37</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_track</span>(<span class="ruby-identifier">track</span>)
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">print</span> <span class="ruby-value str">'MTrk'</span>
+        <span class="ruby-identifier">track_size_file_pos</span> = <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">tell</span>()
+        <span class="ruby-identifier">write32</span>(<span class="ruby-value">0</span>)             <span class="ruby-comment cmt"># Dummy byte count; overwritten later</span>
+        <span class="ruby-ivar">@bytes_written</span> = <span class="ruby-value">0</span>     <span class="ruby-comment cmt"># Reset after previous write</span>
+
+        <span class="ruby-identifier">write_instrument</span>(<span class="ruby-identifier">track</span>.<span class="ruby-identifier">instrument</span>)
+
+        <span class="ruby-identifier">prev_event</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-identifier">prev_status</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">track</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">event</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Realtime</span>)
+                <span class="ruby-identifier">write_var_len</span>(<span class="ruby-identifier">event</span>.<span class="ruby-identifier">delta_time</span>)
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">data</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">data_as_bytes</span>()
+            <span class="ruby-identifier">status</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>] <span class="ruby-comment cmt"># status byte plus channel number, if any</span>
+
+            <span class="ruby-comment cmt"># running status byte</span>
+            <span class="ruby-identifier">status</span> = <span class="ruby-identifier">possibly_munge_due_to_running_status_byte</span>(<span class="ruby-identifier">data</span>,
+                                                               <span class="ruby-identifier">prev_status</span>)
+
+            <span class="ruby-ivar">@bytes_written</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">write_bytes</span>(<span class="ruby-identifier">data</span>)
+
+            <span class="ruby-identifier">prev_event</span> = <span class="ruby-identifier">event</span>
+            <span class="ruby-identifier">prev_status</span> = <span class="ruby-identifier">status</span>
+        }
+
+        <span class="ruby-comment cmt"># Write track end event.</span>
+        <span class="ruby-identifier">event</span> = <span class="ruby-constant">MetaEvent</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">META_TRACK_END</span>)
+        <span class="ruby-identifier">write_var_len</span>(<span class="ruby-value">0</span>)
+        <span class="ruby-ivar">@bytes_written</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">write_bytes</span>(<span class="ruby-identifier">event</span>.<span class="ruby-identifier">data_as_bytes</span>())
+
+        <span class="ruby-comment cmt"># Go back to beginning of track data and write number of bytes,</span>
+        <span class="ruby-comment cmt"># then come back here to end of file.</span>
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-identifier">track_size_file_pos</span>)
+        <span class="ruby-identifier">write32</span>(<span class="ruby-ivar">@bytes_written</span>)
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">seek</span>(<span class="ruby-value">0</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_END</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

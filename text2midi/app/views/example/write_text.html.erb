@@ -1,78 +1,91 @@
-
-<div style="color:red";>
-<h3>A Ruby on Rails Midi and Audio System</h3>
+<!-- This is the start of the instrument widget -->
+<div id="content_top">
+ <h2>Within Literature there are endless sonic possibilities</h2>
+<%= link_to_unless_current "Generate Music", :controller => "example" , :action => "write_text" %> 
+<%= link_to_unless_current "Theory", :controller => "main", :action => "theory" %>
+<%= link_to_unless_current "About", :controller => "main", :action => "about" %>
 </div>
 
-<b><p> Enter text below to create a new Composition.</p></b> 
+<div id="content">
+<center>
+<b>The Tempo and Instruments can be changed by using the Sliders
+ This site uses Ajax so if the slider don't work turn on your javascript
+</b>
+ 
+</center>
+<div style="margin-left:220px">
 
-
-<!-- This is the start of the instrument widget -->
-<div id="drag_item">
- <div class="instrumentfg">
-	<br/>
- <h3>Text 2 Midi Converter</h3>
+<br/>
+ <h2>Text 2 Midi Converter</h2>
 <div id="midi_form">
 <%= text_area_tag "midi_text", "put text here" %>
-	<%= hidden_field_tag 'tempo', 40 %>
-	<%= hidden_field_tag 'instr', 0 %>
-	<!-- <%= hidden_field_tag 'dur', "quarter" %> -->
+  <%= hidden_field_tag 'tempo', 140 %>
+  <%= hidden_field_tag 'instr', 0 %>
+  <!-- <%= hidden_field_tag 'dur', "quarter" %> -->
 </div>
-<span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
-<br/>
-<b>Tempo<b/>
-<br/>
-<div style="padding-left:250px">
-	<div id="track1" style="width:100px; background-color:#ccc; height:10px;">
-		<div id="handle1" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
-	</div>
+
+<br/><br/>
+<b>Tempo<b/><br/><br/>
+
+<div id="track1" style="width:100px; background-color:#ccc; height:10px;">
+<div id="handle1" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
+<br/><br/>
 <p id="debug1">&nbsp;</p>
 </div>
+<p>&nbsp;</p>
+<br/><br/>
 <b>Instrument</b>
 <br/><br/>
-<div style="padding-left:250px">
-<div id="track2" style="width:100px; background-color:#ccc; height:10px;">
-		<div id="handle2" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
-	</div>
-<p id="debug2">&nbsp;</p>
-<br/>
+
+<div id="track2" style="width:138px; background-color:#ccc; height:10px;">
+    <div id="handle2" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
+  </div><br/><br/>
+<div id="instrument-name">&nbsp;</div>
+
+
+
+
+
+<span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
+<br/><br/>
 </div>
 </div>
+
 <!-- This is the end of the widget functions -->
-</div>
-</div>
 <div id="midi_result">
 </div>
 </div>
-</div>
+
 <!-- Controls the The slider info -->
 <script type="text/javascript" language="javascript">
 // <![CDATA[
 // horizontal slider control with preset values
-	new Control.Slider('handle1', 'track1', {
-		range: $R(40, 200),
-		values: [40,45,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200],
-		sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-		onSlide: function(v){ $('debug1').innerHTML = 'tempo: ' + v; $('tempo').value = v; },
-		onChange: function(v){ $('debug1').innerHTML = 'tempo changed to: ' + v }
-	});
-	
-	new Control.Slider('handle2', 'track2', {
-		range: $R(0,99),
-		values: [<%= (0..99).to_a.join(',') %>],
-		sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-		onSlide: function(v){ $('debug2').innerHTML = 'instrument: ' + v; $('instr').value = v; },
-		onChange: function(v){ $('debug2').innerHTML = 'instrument changed to: ' + v }
-	});
-	
-	new Control.Slider('handle3', 'track3', {
-		range: $R(0,99),
-		values: [<%= (0..99).to_a.join(',') %>],
-		sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-		onSlide: function(v){ $('debug3').innerHTML = 'duration: ' + v; $('dur').value = v; },
-		onChange: function(v){ $('debug3').innerHTML = 'duration is now set to: ' + v }
-	});
+  new Control.Slider('handle1', 'track1', {
+    range: $R(40, 200),
+    values: [<%= (40..200).to_a.join(',') %>],
+    sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
+    onSlide: function(v){ $('debug1').innerHTML = 'tempo: ' + v; $('tempo').value = v; },
+    onChange: function(v){ $('debug1').innerHTML = 'tempo is : ' + v }
+  });
+  
+  new Control.Slider('handle2', 'track2', {
+    range: $R(1,128),
+    values: [<%= (1..128).to_a.join(',') %>],
+    sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
+    onSlide: function(v){ setBox(v); $('instr').value = v; },
+    onChange: function(v){ setBox(v); $('instr').value = v; }
+  });
+  
+  // new Control.Slider('handle3', 'track3', {
+  //  range: $R(1,32),
+  //  values: ["",2,4,8,16,32],
+  //  sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
+  //  onSlide: function(v){ $('debug3').innerHTML = 'duration: ' + v; $('dur').value = v; },
+  //  onChange: function(v){ $('debug3').innerHTML = 'duration is: ' + v }
+  // });
 
-	
+  
 // ]]>
 </script>
-<%= draggable_element "drag_item" %>
+
+

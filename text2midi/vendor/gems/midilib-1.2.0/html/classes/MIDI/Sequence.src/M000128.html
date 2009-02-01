@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_measures (MIDI::Sequence)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/sequence.rb, line 150</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_measures</span>      
+       <span class="ruby-comment cmt"># Collect time sig events and scan for last event time</span>
+       <span class="ruby-identifier">time_sigs</span> = []
+       <span class="ruby-identifier">max_pos</span> = <span class="ruby-value">0</span>
+       <span class="ruby-ivar">@tracks</span>.<span class="ruby-identifier">each</span>  { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">t</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> 
+           <span class="ruby-identifier">time_sigs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">timesig?</span>           
+           <span class="ruby-identifier">max_pos</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">time_from_start</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">time_from_start</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_pos</span>
+         }
+       }
+       <span class="ruby-identifier">time_sigs</span>.<span class="ruby-identifier">sort</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">time_from_start</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">time_from_start</span> }      
+      
+       <span class="ruby-comment cmt"># Add a &quot;fake&quot; time sig event at the very last position of the sequence,</span>
+       <span class="ruby-comment cmt"># just to make sure the whole sequence is calculated.</span>
+       <span class="ruby-identifier">t</span> = <span class="ruby-constant">MIDI</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeSig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">24</span>, <span class="ruby-value">8</span>, <span class="ruby-value">0</span>)
+       <span class="ruby-identifier">t</span>.<span class="ruby-identifier">time_from_start</span> = <span class="ruby-identifier">max_pos</span>
+       <span class="ruby-identifier">time_sigs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">t</span>     
+     
+       <span class="ruby-comment cmt"># Default to 4/4</span>
+       <span class="ruby-identifier">measure_length</span> = <span class="ruby-ivar">@ppqn</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+       <span class="ruby-identifier">oldnumer</span>, <span class="ruby-identifier">olddenom</span>, <span class="ruby-identifier">oldbeats</span> = <span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">24</span>
+           
+       <span class="ruby-identifier">measures</span> = <span class="ruby-constant">MIDI</span><span class="ruby-operator">::</span><span class="ruby-constant">Measures</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">max_pos</span>, <span class="ruby-ivar">@ppqn</span>)      
+       <span class="ruby-identifier">curr_pos</span> = <span class="ruby-value">0</span>
+       <span class="ruby-identifier">curr_meas_no</span> = <span class="ruby-value">1</span>
+       <span class="ruby-identifier">time_sigs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">te</span><span class="ruby-operator">|</span>         
+          <span class="ruby-identifier">meas_count</span> = (<span class="ruby-identifier">te</span>.<span class="ruby-identifier">time_from_start</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">curr_pos</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">measure_length</span>
+          <span class="ruby-identifier">meas_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">te</span>.<span class="ruby-identifier">time_from_start</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">curr_pos</span>) <span class="ruby-operator">%</span> <span class="ruby-identifier">measure_length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-value">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">meas_count</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>                  
+              <span class="ruby-identifier">measures</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MIDI</span><span class="ruby-operator">::</span><span class="ruby-constant">Measure</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">curr_meas_no</span>, 
+                          <span class="ruby-identifier">curr_pos</span>, <span class="ruby-identifier">measure_length</span>, <span class="ruby-identifier">oldnumer</span>, <span class="ruby-identifier">olddenom</span>, <span class="ruby-identifier">oldbeats</span>) 
+              <span class="ruby-identifier">curr_meas_no</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+              <span class="ruby-identifier">curr_pos</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">measure_length</span>
+          }
+          <span class="ruby-identifier">oldnumer</span>, <span class="ruby-identifier">olddenom</span>, <span class="ruby-identifier">oldbeats</span> = <span class="ruby-identifier">te</span>.<span class="ruby-identifier">numerator</span>, <span class="ruby-identifier">te</span>.<span class="ruby-identifier">denominator</span>, <span class="ruby-identifier">te</span>.<span class="ruby-identifier">metronome_ticks</span>
+          <span class="ruby-identifier">measure_length</span> = <span class="ruby-identifier">te</span>.<span class="ruby-identifier">measure_duration</span>(<span class="ruby-ivar">@ppqn</span>)        
+       }      
+       <span class="ruby-identifier">measures</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

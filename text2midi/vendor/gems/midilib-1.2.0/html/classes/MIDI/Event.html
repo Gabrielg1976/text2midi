@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MIDI::Event</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MIDI::Event</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/midilib/event_rb.html">
+                lib/midilib/event.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The abstract superclass of all <a href="../MIDI.html">MIDI</a> events.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000182">&lt;=&gt;</a>&nbsp;&nbsp;
+      <a href="#M000171">channel?</a>&nbsp;&nbsp;
+      <a href="#M000184">channel_to_s</a>&nbsp;&nbsp;
+      <a href="#M000170">data_as_bytes</a>&nbsp;&nbsp;
+      <a href="#M000178">keysig?</a>&nbsp;&nbsp;
+      <a href="#M000175">meta?</a>&nbsp;&nbsp;
+      <a href="#M000169">new</a>&nbsp;&nbsp;
+      <a href="#M000172">note?</a>&nbsp;&nbsp;
+      <a href="#M000174">note_off?</a>&nbsp;&nbsp;
+      <a href="#M000173">note_on?</a>&nbsp;&nbsp;
+      <a href="#M000183">number_to_s</a>&nbsp;&nbsp;
+      <a href="#M000180">program_change?</a>&nbsp;&nbsp;
+      <a href="#M000181">quantize_to</a>&nbsp;&nbsp;
+      <a href="#M000179">realtime?</a>&nbsp;&nbsp;
+      <a href="#M000176">system?</a>&nbsp;&nbsp;
+      <a href="#M000177">timesig?</a>&nbsp;&nbsp;
+      <a href="#M000185">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">delta_time</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Modifying delta_time does not affect time_from_start. You need to call the
+event&#8216;s track&#8216;s <tt>recalc_time</tt> method.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">print_channel_numbers_from_one</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Determines if <a href="Event.html#M000185">to_s</a> outputs <a
+href="../MIDI.html">MIDI</a> channel numbers from 1-16 instead of the
+default 0-15.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">print_decimal_numbers</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Determines if <a href="Event.html#M000185">to_s</a> outputs numbers as hex
+(false, the default) or decimal # (true). Delta times are always printed as
+decimal.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">print_note_names</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Determines if <a href="Event.html#M000185">to_s</a> outputs hex note
+numbers (false, the default) or decimal note names (true).
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">status</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The <a href="../MIDI.html">MIDI</a> status byte. Never includes the
+channel, which is held separately by <a
+href="ChannelEvent.html">MIDI::ChannelEvent</a>.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">time_from_start</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The start time of this event from the beginning of the track. This value is
+held here but is maintained by the track.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000169" class="method-detail">
+        <a name="M000169"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000169.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000169.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(status = 0, delta_time = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000182" class="method-detail">
+        <a name="M000182"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000182.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000182.html');return false;">
+          <span class="method-name">&lt;=&gt;</span><span class="method-args">(an_event)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+For sorting. Uses @time_from_start, which is maintained by this
+event&#8216;s track. I&#8216;m not sure this is necessary, since each track
+has to maintain its events&#8217; time-from-start values anyway.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000171" class="method-detail">
+        <a name="M000171"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000171.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000171.html');return false;">
+          <span class="method-name">channel?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a channel event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000184" class="method-detail">
+        <a name="M000184"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000184.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000184.html');return false;">
+          <span class="method-name">channel_to_s</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>val</tt> as a decimal or hex string, depending upon the value
+of @print_decimal_numbers.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000170" class="method-detail">
+        <a name="M000170"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000170.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000170.html');return false;">
+          <span class="method-name">data_as_bytes</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the raw bytes that are written to a <a href="../MIDI.html">MIDI</a>
+file or output to a <a href="../MIDI.html">MIDI</a> stream. In MIDI::EVENT
+this raises a &quot;subclass responsibility&quot; exception.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000178.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000178.html');return false;">
+          <span class="method-name">keysig?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a key signature event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000175.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000175.html');return false;">
+          <span class="method-name">meta?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a meta event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000172.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000172.html');return false;">
+          <span class="method-name">note?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a note on, note off, or polyphonic
+pressure event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000174" class="method-detail">
+        <a name="M000174"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000174.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000174.html');return false;">
+          <span class="method-name">note_off?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a note off event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000173" class="method-detail">
+        <a name="M000173"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000173.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000173.html');return false;">
+          <span class="method-name">note_on?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a note on event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000183" class="method-detail">
+        <a name="M000183"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000183.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000183.html');return false;">
+          <span class="method-name">number_to_s</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>val</tt> as a decimal or hex string, depending upon the value
+of @print_decimal_numbers.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000180.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000180.html');return false;">
+          <span class="method-name">program_change?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a program change.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000181" class="method-detail">
+        <a name="M000181"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000181.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000181.html');return false;">
+          <span class="method-name">quantize_to</span><span class="method-args">(boundary)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Quantize this event&#8216;s time_from_start by moving it to the nearest
+multiple of <tt>boundary</tt>. See <a
+href="Track.html#M000080">MIDI::Track#quantize</a>. <b>Note</b>: does not
+modify the event&#8216;s delta_time, though <a
+href="Track.html#M000080">MIDI::Track#quantize</a> calls
+recalc_delta_from_times after it asks each event to quantize itself.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000179.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000179.html');return false;">
+          <span class="method-name">realtime?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a realtime status byte.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000176.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000176.html');return false;">
+          <span class="method-name">system?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a system message event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000177" class="method-detail">
+        <a name="M000177"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000177.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000177.html');return false;">
+          <span class="method-name">timesig?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this is a time signature event.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000185" class="method-detail">
+        <a name="M000185"></a>
+
+        <div class="method-heading">
+          <a href="Event.src/M000185.html" target="Code" class="method-signature"
+            onclick="popupCode('Event.src/M000185.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

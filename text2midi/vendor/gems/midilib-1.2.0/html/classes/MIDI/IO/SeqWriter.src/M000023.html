@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>write_header (MIDI::IO::SeqWriter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/seqwriter.rb, line 29</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_header</span>
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">print</span> <span class="ruby-value str">'MThd'</span>
+        <span class="ruby-identifier">write32</span>(<span class="ruby-value">6</span>)
+        <span class="ruby-identifier">write16</span>(<span class="ruby-value">1</span>)             <span class="ruby-comment cmt"># Ignore sequence format; write as format 1</span>
+        <span class="ruby-identifier">write16</span>(<span class="ruby-ivar">@seq</span>.<span class="ruby-identifier">tracks</span>.<span class="ruby-identifier">length</span>)
+        <span class="ruby-identifier">write16</span>(<span class="ruby-ivar">@seq</span>.<span class="ruby-identifier">ppqn</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>note_to_length (MIDI::Sequence)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/sequence.rb, line 94</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">note_to_length</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip!</span>
+      <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(dotted)?(.*?)(triplet)?$/</span>
+      <span class="ruby-identifier">dotted</span>, <span class="ruby-identifier">note_name</span>, <span class="ruby-identifier">triplet</span> = <span class="ruby-identifier">$1</span>, <span class="ruby-identifier">$2</span>, <span class="ruby-identifier">$3</span>
+      <span class="ruby-identifier">note_name</span>.<span class="ruby-identifier">strip!</span>
+      <span class="ruby-identifier">mult</span> = <span class="ruby-value">1.0</span>
+      <span class="ruby-identifier">mult</span> = <span class="ruby-value">1.5</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dotted</span>
+      <span class="ruby-identifier">mult</span> <span class="ruby-operator">/=</span> <span class="ruby-value">3.0</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">triplet</span>
+      <span class="ruby-identifier">len</span> = <span class="ruby-constant">NOTE_TO_LENGTH</span>[<span class="ruby-identifier">note_name</span>]
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Sequence.note_to_length: \&quot;#{note_name}\&quot; not understood in \&quot;#{name}\&quot;&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">len</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">len</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">mult</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

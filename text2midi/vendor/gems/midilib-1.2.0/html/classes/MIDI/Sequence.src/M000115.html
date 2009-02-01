@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (MIDI::Sequence)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/sequence.rb, line 45</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-ivar">@tracks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+        <span class="ruby-ivar">@ppqn</span> = <span class="ruby-value">480</span>
+
+        <span class="ruby-comment cmt"># Time signature</span>
+        <span class="ruby-ivar">@numer</span> = <span class="ruby-value">4</span>             <span class="ruby-comment cmt"># Numer + denom = 4/4 time default</span>
+        <span class="ruby-ivar">@denom</span> = <span class="ruby-value">2</span>
+        <span class="ruby-ivar">@clocks</span> = <span class="ruby-value">24</span>    <span class="ruby-comment cmt"># Bug fix  Nov 11, 2007 - this is not the same as ppqn!</span>
+        <span class="ruby-ivar">@qnotes</span> = <span class="ruby-value">8</span>
+
+        <span class="ruby-ivar">@reader_class</span> = <span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SeqReader</span>
+        <span class="ruby-ivar">@writer_class</span> = <span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SeqWriter</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

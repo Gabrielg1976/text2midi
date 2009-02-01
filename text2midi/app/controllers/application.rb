@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-  helper :all
-  protect_from_forgery # :secret => 'f44c3d0382cc8ad506e95ed8ddcded8f'
+  helper :all # include all helpers, all the time
+  protect_from_forgery # :secret => '1b837c6e9e4d8ae94613fece81e03c92'
 end

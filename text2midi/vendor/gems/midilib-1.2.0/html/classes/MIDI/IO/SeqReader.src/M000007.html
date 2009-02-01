@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>note_off (MIDI::IO::SeqReader)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/seqreader.rb, line 84</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">note_off</span>(<span class="ruby-identifier">chan</span>, <span class="ruby-identifier">note</span>, <span class="ruby-identifier">vel</span>)
+        <span class="ruby-comment cmt"># Find note on, create note off, connect the two, and remove</span>
+        <span class="ruby-comment cmt"># note on from pending list.</span>
+        <span class="ruby-ivar">@pending</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">on</span>, <span class="ruby-identifier">i</span> <span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">on</span>.<span class="ruby-identifier">note</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">note</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">on</span>.<span class="ruby-identifier">channel</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">chan</span>
+                <span class="ruby-identifier">make_note_off</span>(<span class="ruby-identifier">on</span>, <span class="ruby-identifier">vel</span>)
+                <span class="ruby-ivar">@pending</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">i</span>)
+                <span class="ruby-keyword kw">return</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;note off with no earlier note on (ch #{chan}, note&quot;</span> <span class="ruby-operator">+</span>
+            <span class="ruby-node">&quot; #{note}, vel #{vel})&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

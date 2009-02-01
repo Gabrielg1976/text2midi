@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>read_header (MIDI::IO::MIDIFile)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/midifile.rb, line 190</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read_header</span>
+        <span class="ruby-ivar">@bytes_to_be_read</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">read_mt_header_string</span>(<span class="ruby-constant">MThd_BYTE_ARRAY</span>, <span class="ruby-ivar">@skip_init</span>) <span class="ruby-comment cmt"># &quot;MThd&quot;</span>
+
+        <span class="ruby-ivar">@bytes_to_be_read</span> = <span class="ruby-identifier">read32</span>()
+        <span class="ruby-identifier">format</span> = <span class="ruby-identifier">read16</span>()
+        <span class="ruby-identifier">ntrks</span> = <span class="ruby-identifier">read16</span>()
+        <span class="ruby-identifier">division</span> = <span class="ruby-identifier">read16</span>()
+
+        <span class="ruby-identifier">header</span>(<span class="ruby-identifier">format</span>, <span class="ruby-identifier">ntrks</span>, <span class="ruby-identifier">division</span>)
+
+        <span class="ruby-comment cmt"># Flush any extra stuff, in case the length of the header is not 6</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@bytes_to_be_read</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">get_bytes</span>(<span class="ruby-ivar">@bytes_to_be_read</span>)
+            <span class="ruby-ivar">@bytes_to_be_read</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ntrks</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,32 @@
+midilib is developed by Jim Menard, jimm@io.com. Additional bug fixes and
+suggestions have come from:
+
+Mario Pehle <rubyforge.org@errorinitus.de>
+
+    Noticed that the PolyPressure class used the misspelled constant
+    POLY_PRESSSURE.
+
+Mike Hall <m3ha11@rcn.com>
+
+    Found errors in example scripts' $LOAD_PATH and a bug in sequence reading
+    block callback arguments. Found a bug in meta events that caused
+    "Object#type is deprecated" error messages.
+
+Emanuel Borsboom <emanuel.borsboom@gmail.com>
+
+    Found and fixed an error in PitchBend data encoding.
+
+Christopher Rose <cmr@synopsys.com>
+
+    Found bug in Track#recalc_delta_from_times.
+
+Jari Williamsson <jari.williamsson@mailbox.swipnet.se>
+
+    Contributed Measure and Measures, TimeSig and KeySig, and fixes to events.
+    Added get_measures to Sequence. Added default implementation of
+    key_signature in SeqReader. Contributed the measures_mbt.rb example.
+
+Noah Thorp <noah@rixiform.com>
+
+    Found a bug in the code intended to make midilib work under Ruby 1.9.
+    Found another bug in KeySing.data_as_bytes.

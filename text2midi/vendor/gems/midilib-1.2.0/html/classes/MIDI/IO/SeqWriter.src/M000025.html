@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>possibly_munge_due_to_running_status_byte (MIDI::IO::SeqWriter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/seqwriter.rb, line 80</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">possibly_munge_due_to_running_status_byte</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">prev_status</span>)
+        <span class="ruby-identifier">status</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">status</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0xf0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">prev_status</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0xf0</span>
+
+        <span class="ruby-identifier">chan</span> = (<span class="ruby-identifier">status</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x0f</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">status</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">chan</span> <span class="ruby-operator">!=</span> (<span class="ruby-identifier">prev_status</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x0f</span>)
+
+        <span class="ruby-identifier">status</span> = (<span class="ruby-identifier">status</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xf0</span>)
+        <span class="ruby-identifier">prev_status</span> = (<span class="ruby-identifier">prev_status</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xf0</span>)
+
+        <span class="ruby-comment cmt"># Both events are on the same channel. If the two status bytes are</span>
+        <span class="ruby-comment cmt"># exactly the same, the rest is trivial. If it's note on/note off,</span>
+        <span class="ruby-comment cmt"># we can combine those further.</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">prev_status</span>
+            <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] = <span class="ruby-keyword kw">nil</span>    <span class="ruby-comment cmt"># delete status byte from data</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">chan</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NOTE_OFF</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-value">64</span>
+            <span class="ruby-comment cmt"># If we see a note off and the velocity is 64, we can store</span>
+            <span class="ruby-comment cmt"># a note on with a velocity of 0. If the velocity isn't 64</span>
+            <span class="ruby-comment cmt"># then storing a note on would be bad because the would be</span>
+            <span class="ruby-comment cmt"># changed to 64 when reading the file back in.</span>
+            <span class="ruby-identifier">data</span>[<span class="ruby-value">2</span>] = <span class="ruby-value">0</span>                <span class="ruby-comment cmt"># set vel to 0; do before possible shrinking</span>
+            <span class="ruby-identifier">status</span> = <span class="ruby-constant">NOTE_ON</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">chan</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">prev_status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NOTE_ON</span>
+                <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] = []        <span class="ruby-comment cmt"># delete status byte</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">status</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">status</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-comment cmt"># Can't compress data</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">chan</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

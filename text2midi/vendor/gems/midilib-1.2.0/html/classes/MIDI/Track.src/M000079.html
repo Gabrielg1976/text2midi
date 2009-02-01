@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>merge_event_lists (MIDI::Track)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/track.rb, line 61</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_event_lists</span>(<span class="ruby-identifier">list1</span>, <span class="ruby-identifier">list2</span>)
+        <span class="ruby-identifier">recalc_times</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">list1</span>)
+        <span class="ruby-identifier">recalc_times</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">list2</span>)
+        <span class="ruby-identifier">list</span> = (<span class="ruby-identifier">list1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">list2</span>).<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">time_from_start</span> }
+        <span class="ruby-identifier">recalc_delta_from_times</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">list</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">list</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

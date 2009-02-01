@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>read_track (MIDI::IO::MIDIFile)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/midifile.rb, line 211</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read_track</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">c1</span> = <span class="ruby-identifier">type</span> = <span class="ruby-identifier">needed</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">sysex_continue</span> = <span class="ruby-keyword kw">false</span> <span class="ruby-comment cmt"># True if last msg was unfinished</span>
+        <span class="ruby-identifier">running</span> = <span class="ruby-keyword kw">false</span>                <span class="ruby-comment cmt"># True when running status used</span>
+        <span class="ruby-identifier">status</span> = <span class="ruby-value">0</span>             <span class="ruby-comment cmt"># (Possibly running) status byte</span>
+
+        <span class="ruby-ivar">@bytes_to_be_read</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">read_mt_header_string</span>(<span class="ruby-constant">MTrk_BYTE_ARRAY</span>, <span class="ruby-keyword kw">false</span>)
+
+        <span class="ruby-ivar">@bytes_to_be_read</span> = <span class="ruby-identifier">read32</span>()
+        <span class="ruby-ivar">@curr_ticks</span> = <span class="ruby-ivar">@ticks_so_far</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">start_track</span>()
+
+        <span class="ruby-keyword kw">while</span> <span class="ruby-ivar">@bytes_to_be_read</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-ivar">@curr_ticks</span> = <span class="ruby-identifier">read_var_len</span>() <span class="ruby-comment cmt"># Delta time</span>
+            <span class="ruby-ivar">@ticks_so_far</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@curr_ticks</span>
+
+            <span class="ruby-comment cmt"># Copy raw var num data into raw time stamp data</span>
+            <span class="ruby-ivar">@raw_time_stamp_data</span> = <span class="ruby-ivar">@raw_var_num_data</span>.<span class="ruby-identifier">dup</span>()
+
+            <span class="ruby-identifier">c</span> = <span class="ruby-identifier">getc</span>()         <span class="ruby-comment cmt"># Read first byte</span>
+
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sysex_continue</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">EOX</span>
+                <span class="ruby-identifier">error</span>(<span class="ruby-value str">&quot;didn't find expected continuation of a sysex&quot;</span>)
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">c</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x80</span>).<span class="ruby-identifier">zero?</span> <span class="ruby-comment cmt"># Running status?</span>
+                <span class="ruby-identifier">error</span>(<span class="ruby-value str">'unexpected running status'</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">zero?</span>
+                <span class="ruby-identifier">running</span> = <span class="ruby-keyword kw">true</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">status</span> = <span class="ruby-identifier">c</span>
+                <span class="ruby-identifier">running</span> = <span class="ruby-keyword kw">false</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-identifier">needed</span> = <span class="ruby-constant">NUM_DATA_BYTES</span>[(<span class="ruby-identifier">status</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">4</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x0f</span>]
+
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">needed</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-comment cmt"># i.e., is it a channel message?</span>
+                <span class="ruby-identifier">c1</span> = <span class="ruby-identifier">running</span> <span class="ruby-value">? </span><span class="ruby-identifier">c</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">getc</span>() <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x7f</span>)
+
+                <span class="ruby-comment cmt"># The &quot;&amp; 0x7f&quot; here may seem unnecessary, but I've seen</span>
+                <span class="ruby-comment cmt"># &quot;bad&quot; MIDI files that had, for example, volume bytes</span>
+                <span class="ruby-comment cmt"># with the upper bit set. This code should not harm</span>
+                <span class="ruby-comment cmt"># proper data.</span>
+                <span class="ruby-identifier">chan_message</span>(<span class="ruby-identifier">running</span>, <span class="ruby-identifier">status</span>, <span class="ruby-identifier">c1</span>,
+                            (<span class="ruby-identifier">needed</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>) <span class="ruby-operator">?</span> (<span class="ruby-identifier">getc</span>() <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x7f</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">c</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_EVENT</span>    <span class="ruby-comment cmt"># Meta event</span>
+                <span class="ruby-identifier">type</span> = <span class="ruby-identifier">getc</span>()
+                <span class="ruby-identifier">msg_init</span>()
+                <span class="ruby-identifier">msg_read</span>(<span class="ruby-identifier">read_var_len</span>())
+                <span class="ruby-identifier">meta_event</span>(<span class="ruby-identifier">type</span>)
+            <span class="ruby-keyword kw">when</span> <span class="ruby-constant">SYSEX</span>         <span class="ruby-comment cmt"># Start of system exclusive</span>
+                <span class="ruby-identifier">msg_init</span>()
+                <span class="ruby-identifier">msg_add</span>(<span class="ruby-constant">SYSEX</span>)
+                <span class="ruby-identifier">c</span> = <span class="ruby-identifier">msg_read</span>(<span class="ruby-identifier">read_var_len</span>())
+
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-constant">EOX</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@no_merge</span>
+                    <span class="ruby-identifier">handle_sysex</span>(<span class="ruby-identifier">msg</span>())
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">sysex_continue</span> = <span class="ruby-keyword kw">true</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-constant">EOX</span>           <span class="ruby-comment cmt"># Sysex continuation or arbitrary stuff</span>
+                <span class="ruby-identifier">msg_init</span>() <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">sysex_continue</span>
+                <span class="ruby-identifier">c</span> = <span class="ruby-identifier">msg_read</span>(<span class="ruby-identifier">read_var_len</span>())
+
+                <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">sysex_continue</span>
+                    <span class="ruby-identifier">handle_arbitrary</span>(<span class="ruby-identifier">msg</span>())
+                <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-constant">EOX</span>
+                    <span class="ruby-identifier">handle_sysex</span>(<span class="ruby-identifier">msg</span>())
+                    <span class="ruby-identifier">sysex_continue</span> = <span class="ruby-keyword kw">false</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">bad_byte</span>(<span class="ruby-identifier">c</span>)
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">end_track</span>()
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

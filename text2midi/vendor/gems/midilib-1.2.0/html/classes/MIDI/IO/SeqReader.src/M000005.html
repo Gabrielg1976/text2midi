@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>end_track (MIDI::IO::SeqReader)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/seqreader.rb, line 52</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">end_track</span>()
+        <span class="ruby-comment cmt"># Turn off any pending note on messages</span>
+        <span class="ruby-ivar">@pending</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">on</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">make_note_off</span>(<span class="ruby-identifier">on</span>, <span class="ruby-value">64</span>) }
+        <span class="ruby-ivar">@pending</span> = <span class="ruby-keyword kw">nil</span>
+
+        <span class="ruby-comment cmt"># Don't bother adding the META_TRACK_END event to the track.</span>
+        <span class="ruby-comment cmt"># This way, we don't have to worry about making sure the</span>
+        <span class="ruby-comment cmt"># last event is always a track end event.</span>
+
+        <span class="ruby-comment cmt"># Let the track calculate event times from start of track. This is</span>
+        <span class="ruby-comment cmt"># in lieu of calling Track.add for each event.</span>
+        <span class="ruby-ivar">@track</span>.<span class="ruby-identifier">recalc_times</span>()
+
+        <span class="ruby-comment cmt"># Store bitmask of all channels used into track</span>
+        <span class="ruby-ivar">@track</span>.<span class="ruby-identifier">channels_used</span> = <span class="ruby-ivar">@chan_mask</span>
+
+        <span class="ruby-comment cmt"># call update block</span>
+        <span class="ruby-ivar">@update_block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@track</span>, <span class="ruby-ivar">@ntrks</span>, <span class="ruby-ivar">@seq</span>.<span class="ruby-identifier">tracks</span>.<span class="ruby-identifier">length</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@update_block</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

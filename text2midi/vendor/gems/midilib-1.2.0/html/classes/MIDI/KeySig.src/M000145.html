@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_s (MIDI::KeySig)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/event.rb, line 667</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">majorkeys</span> = [<span class="ruby-value str">'C flat'</span>, <span class="ruby-value str">'G flat'</span>, <span class="ruby-value str">'D flat'</span>, <span class="ruby-value str">'A flat'</span>, <span class="ruby-value str">'E flat'</span>, <span class="ruby-value str">'B flat'</span>, <span class="ruby-value str">'F'</span>, 
+                     <span class="ruby-value str">'C'</span>, <span class="ruby-value str">'G'</span>, <span class="ruby-value str">'D'</span>, <span class="ruby-value str">'A'</span>, <span class="ruby-value str">'E'</span>, <span class="ruby-value str">'B'</span>, <span class="ruby-value str">'F#'</span>, <span class="ruby-value str">'C#'</span>]
+        <span class="ruby-identifier">minorkeys</span> = [<span class="ruby-value str">'a flat'</span>, <span class="ruby-value str">'e flat'</span>, <span class="ruby-value str">'b flat'</span>, <span class="ruby-value str">'f'</span>, <span class="ruby-value str">'c'</span>, <span class="ruby-value str">'g'</span>, <span class="ruby-value str">'d'</span>, 
+                      <span class="ruby-value str">'a'</span>, <span class="ruby-value str">'e'</span>, <span class="ruby-value str">'b'</span>, <span class="ruby-value str">'f#'</span>, <span class="ruby-value str">'c#'</span>, <span class="ruby-value str">'g#'</span>, <span class="ruby-value str">'d#'</span>, <span class="ruby-value str">'a#'</span>]
+        <span class="ruby-identifier">minor_key?</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;key sig #{minorkeys[sharpflat + 7]} minor&quot;</span> <span class="ruby-operator">:</span>
+                 <span class="ruby-node">&quot;key sig #{majorkeys[sharpflat + 7]} major&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

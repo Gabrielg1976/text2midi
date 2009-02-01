@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>meta_event (MIDI::IO::MIDIFile)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/io/midifile.rb, line 299</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_event</span>(<span class="ruby-identifier">type</span>)
+        <span class="ruby-identifier">m</span> = <span class="ruby-identifier">msg</span>()              <span class="ruby-comment cmt"># Copy of internal message buffer</span>
+
+        <span class="ruby-comment cmt"># Create raw data array</span>
+        <span class="ruby-ivar">@raw_data</span> = []
+        <span class="ruby-ivar">@raw_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">META_EVENT</span>
+        <span class="ruby-ivar">@raw_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">type</span>
+        <span class="ruby-ivar">@raw_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@raw_var_num_data</span>
+        <span class="ruby-ivar">@raw_data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">m</span>
+        <span class="ruby-ivar">@raw_data</span>.<span class="ruby-identifier">flatten!</span>
+
+        <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">type</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_SEQ_NUM</span>
+            <span class="ruby-identifier">sequence_number</span>((<span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">8</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>])
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_TEXT</span>, <span class="ruby-constant">META_COPYRIGHT</span>, <span class="ruby-constant">META_SEQ_NAME</span>, <span class="ruby-constant">META_INSTRUMENT</span>,
+                <span class="ruby-constant">META_LYRIC</span>, <span class="ruby-constant">META_MARKER</span>, <span class="ruby-constant">META_CUE</span>, <span class="ruby-value">0x08</span>, <span class="ruby-value">0x09</span>, <span class="ruby-value">0x0a</span>,
+                <span class="ruby-value">0x0b</span>, <span class="ruby-value">0x0c</span>, <span class="ruby-value">0x0d</span>, <span class="ruby-value">0x0e</span>, <span class="ruby-value">0x0f</span>
+            <span class="ruby-identifier">text</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">m</span>)
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_TRACK_END</span>
+            <span class="ruby-identifier">eot</span>()
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_SET_TEMPO</span>
+            <span class="ruby-identifier">tempo</span>((<span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">16</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">8</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>])
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_SMPTE</span>
+            <span class="ruby-identifier">smpte</span>(<span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">4</span>])
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_TIME_SIG</span>
+            <span class="ruby-identifier">time_signature</span>(<span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">3</span>])
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_KEY_SIG</span>
+            <span class="ruby-identifier">key_signature</span>(<span class="ruby-identifier">m</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">false</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">true</span>)
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">META_SEQ_SPECIF</span>
+            <span class="ruby-identifier">sequencer_specific</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">m</span>)
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">meta_misc</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">m</span>)
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

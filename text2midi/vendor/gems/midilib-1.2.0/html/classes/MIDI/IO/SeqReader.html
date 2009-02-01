@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MIDI::IO::SeqReader</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MIDI::IO::SeqReader</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/midilib/io/seqreader_rb.html">
+                lib/midilib/io/seqreader.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="MIDIFile.html">
+                MIDIFile
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Reads <a href="../../MIDI.html">MIDI</a> files. As a subclass of <a
+href="MIDIFile.html">MIDIFile</a>, this class implements the callback
+methods for each <a href="../../MIDI.html">MIDI</a> event and use them to
+build <a href="../Track.html">Track</a> and <a
+href="../Event.html">Event</a> objects and give the tracks to a <a
+href="../Sequence.html">Sequence</a>.
+</p>
+<p>
+We append <a href="SeqReader.html#M000002">new</a> events to the end of a
+track&#8216;s event list, bypassing a call to <a
+href="../Track.html">Track</a>.add. This means that we must call <a
+href="../Track.html#M000081">Track.recalc_times</a> at the end of the track
+so it can update each event with its time from the track&#8216;s start (see
+<a href="SeqReader.html#M000005">end_track</a> below).
+</p>
+<p>
+META_TRACK_END events are not added to tracks. This way, we don&#8216;t
+have to worry about making sure the last event is always a track end event.
+We rely on the <a href="SeqWriter.html">SeqWriter</a> to append a
+META_TRACK_END event to each track when it is output.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000013">chan_pressure</a>&nbsp;&nbsp;
+      <a href="#M000010">controller</a>&nbsp;&nbsp;
+      <a href="#M000005">end_track</a>&nbsp;&nbsp;
+      <a href="#M000003">header</a>&nbsp;&nbsp;
+      <a href="#M000019">key_signature</a>&nbsp;&nbsp;
+      <a href="#M000008">make_note_off</a>&nbsp;&nbsp;
+      <a href="#M000015">meta_misc</a>&nbsp;&nbsp;
+      <a href="#M000002">new</a>&nbsp;&nbsp;
+      <a href="#M000007">note_off</a>&nbsp;&nbsp;
+      <a href="#M000006">note_on</a>&nbsp;&nbsp;
+      <a href="#M000011">pitch_bend</a>&nbsp;&nbsp;
+      <a href="#M000009">pressure</a>&nbsp;&nbsp;
+      <a href="#M000012">program</a>&nbsp;&nbsp;
+      <a href="#M000004">start_track</a>&nbsp;&nbsp;
+      <a href="#M000014">sysex</a>&nbsp;&nbsp;
+      <a href="#M000018">tempo</a>&nbsp;&nbsp;
+      <a href="#M000016">text</a>&nbsp;&nbsp;
+      <a href="#M000017">time_signature</a>&nbsp;&nbsp;
+      <a href="#M000020">track_uses_channel</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000002.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(seq, proc = nil) {|track, num_tracks, index| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The optional proc block is called once at the start of the file and again
+at the end of each track. There are three arguments to the block: the
+track, the track number (1 through <em>n</em>), and the total number of
+tracks.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000013.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000013.html');return false;">
+          <span class="method-name">chan_pressure</span><span class="method-args">(chan, press)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000010.html');return false;">
+          <span class="method-name">controller</span><span class="method-args">(chan, control, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000005.html');return false;">
+          <span class="method-name">end_track</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000003.html');return false;">
+          <span class="method-name">header</span><span class="method-args">(format, ntrks, division)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000019.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000019.html');return false;">
+          <span class="method-name">key_signature</span><span class="method-args">(sharpflat, is_minor)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000008.html');return false;">
+          <span class="method-name">make_note_off</span><span class="method-args">(on, vel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000015.html');return false;">
+          <span class="method-name">meta_misc</span><span class="method-args">(type, msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000007.html');return false;">
+          <span class="method-name">note_off</span><span class="method-args">(chan, note, vel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000006.html');return false;">
+          <span class="method-name">note_on</span><span class="method-args">(chan, note, vel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000011.html');return false;">
+          <span class="method-name">pitch_bend</span><span class="method-args">(chan, msb, lsb)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000009.html');return false;">
+          <span class="method-name">pressure</span><span class="method-args">(chan, note, press)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000012.html');return false;">
+          <span class="method-name">program</span><span class="method-args">(chan, program)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000004.html');return false;">
+          <span class="method-name">start_track</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000014.html');return false;">
+          <span class="method-name">sysex</span><span class="method-args">(msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000018.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000018.html');return false;">
+          <span class="method-name">tempo</span><span class="method-args">(microsecs)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&#8212;
+</p>
+<pre>
+     def smpte(hour, min, sec, frame, fract)
+     end
+</pre>
+<p>
+++
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000016.html');return false;">
+          <span class="method-name">text</span><span class="method-args">(type, msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+     def sequence_number(num)
+     end
+</pre>
+<p>
+++
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000017.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000017.html');return false;">
+          <span class="method-name">time_signature</span><span class="method-args">(numer, denom, clocks, qnotes)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&#8212; Don&#8216;t bother adding the META_TRACK_END event to the track.
+This way, we don&#8216;t have to worry about always making sure the last
+event is always a track end event. We just have to make sure to write one
+when the track is output back to a file.
+</p>
+<pre>
+      def eot()
+          @track.events &lt;&lt; MetaEvent.new(META_TRACK_END, nil, @curr_ticks)
+      end
+</pre>
+<p>
+++
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="SeqReader.src/M000020.html" target="Code" class="method-signature"
+            onclick="popupCode('SeqReader.src/M000020.html');return false;">
+          <span class="method-name">track_uses_channel</span><span class="method-args">(chan)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return true if the current track uses the specified channel.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

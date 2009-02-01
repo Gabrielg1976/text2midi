@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>note_to_s (MIDI::Utils)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/midilib/utils.rb, line 12</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">note_to_s</span>(<span class="ruby-identifier">num</span>)
+        <span class="ruby-identifier">note</span> = <span class="ruby-identifier">num</span> <span class="ruby-operator">%</span> <span class="ruby-value">12</span>
+        <span class="ruby-identifier">octave</span> = <span class="ruby-identifier">num</span> <span class="ruby-operator">/</span> <span class="ruby-value">12</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;#{NOTE_NAMES[note]}#{octave - 1}&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

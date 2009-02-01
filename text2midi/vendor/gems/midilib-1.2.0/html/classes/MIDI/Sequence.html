@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MIDI::Sequence</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MIDI::Sequence</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/midilib/sequence_rb.html">
+                lib/midilib/sequence.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A <a href="Sequence.html">MIDI::Sequence</a> contains <a
+href="Track.html">MIDI::Track</a> objects.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000117">beats_per_minute</a>&nbsp;&nbsp;
+      <a href="#M000118">bpm</a>&nbsp;&nbsp;
+      <a href="#M000127">each</a>&nbsp;&nbsp;
+      <a href="#M000128">get_measures</a>&nbsp;&nbsp;
+      <a href="#M000122">length_to_delta</a>&nbsp;&nbsp;
+      <a href="#M000123">name</a>&nbsp;&nbsp;
+      <a href="#M000124">name=</a>&nbsp;&nbsp;
+      <a href="#M000115">new</a>&nbsp;&nbsp;
+      <a href="#M000120">note_to_delta</a>&nbsp;&nbsp;
+      <a href="#M000121">note_to_length</a>&nbsp;&nbsp;
+      <a href="#M000125">read</a>&nbsp;&nbsp;
+      <a href="#M000119">tempo</a>&nbsp;&nbsp;
+      <a href="#M000116">time_signature</a>&nbsp;&nbsp;
+      <a href="#M000126">write</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Enumerable</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNNAMED</td>
+          <td>=</td>
+          <td class="context-item-value">'Unnamed Sequence'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_TEMPO</td>
+          <td>=</td>
+          <td class="context-item-value">120</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NOTE_TO_LENGTH</td>
+          <td>=</td>
+          <td class="context-item-value">{       'whole' =&gt; 4.0,       'half' =&gt; 2.0,       'quarter' =&gt; 1.0,       'eighth' =&gt; 0.5,       '8th' =&gt; 0.5,       'sixteenth' =&gt; 0.25,       '16th' =&gt; 0.25,       'thirty second' =&gt; 0.125,       'thirtysecond' =&gt; 0.125,       '32nd' =&gt; 0.125,       'sixty fourth' =&gt; 0.0625,       'sixtyfourth' =&gt; 0.0625,       '64th' =&gt; 0.0625</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">clocks</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">denom</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">format</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The <a href="../MIDI.html">MIDI</a> file format (0, 1, or 2)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">numer</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ppqn</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Pulses (i.e. clocks) Per Quarter Note resolution for the sequence
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">qnotes</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">reader_class</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The class to use for reading <a href="../MIDI.html">MIDI</a> from a stream.
+The default is <a href="IO/SeqReader.html">MIDI::IO::SeqReader</a>. You can
+change this at any time.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">tracks</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Array with all tracks for the sequence
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">writer_class</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The class to use for writeing <a href="../MIDI.html">MIDI</a> from a
+stream. The default is <a href="IO/SeqWriter.html">MIDI::IO::SeqWriter</a>.
+You can change this at any time.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000115.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000117.html');return false;">
+          <span class="method-name">beats_per_minute</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the song <a href="Sequence.html#M000119">tempo</a> in beats per
+minute.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <span class="method-name">bpm</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Sequence.html#M000117">beats_per_minute</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000127.html');return false;">
+          <span class="method-name">each</span><span class="method-args">( {|track| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Iterates over the tracks.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000128.html');return false;">
+          <span class="method-name">get_measures</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a <a href="Measures.html">Measures</a> object, which is an array
+container for all measures in the sequence
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000122.html');return false;">
+          <span class="method-name">length_to_delta</span><span class="method-args">(length)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translates <tt>length</tt> (a multiple of a quarter note) into a delta
+time. For example, 1 is a quarter note, 1.0/32.0 is a 32nd note, 1.5 is a
+dotted quarter, etc. Be aware when using division; 1/32 is zero due to
+integer mathematics and rounding. Use floating-point numbers like 1.0 and
+32.0. This method always returns an integer.
+</p>
+<p>
+See also <a href="Sequence.html#M000120">note_to_delta</a> and <a
+href="Sequence.html#M000121">note_to_length</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000123.html');return false;">
+          <span class="method-name">name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Sequence.html#M000123">name</a> of the first track
+(track zero). If there are no tracks, returns UNNAMED.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000124.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000124.html');return false;">
+          <span class="method-name">name=</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Hands the <a href="Sequence.html#M000123">name</a> to the first track. Does
+nothing if there are no tracks.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000120.html');return false;">
+          <span class="method-name">note_to_delta</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a note length <a href="Sequence.html#M000123">name</a> like
+&quot;whole&quot;, &quot;dotted quarter&quot;, or &quot;8th triplet&quot;,
+return the length of that note in quarter notes as a delta time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000121.html');return false;">
+          <span class="method-name">note_to_length</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Given a note length <a href="Sequence.html#M000123">name</a> like
+&quot;whole&quot;, &quot;dotted quarter&quot;, or &quot;8th triplet&quot;,
+return the length of that note in quarter notes as a floating-point number,
+suitable for use as an argument to <a
+href="Sequence.html#M000122">length_to_delta</a>.
+</p>
+<p>
+Legal names are any value in NOTE_TO_LENGTH, optionally prefixed by
+&quot;dotted_&quot; and/or suffixed by &quot;_triplet&quot;. So, for
+example, &quot;dotted_quarter_triplet&quot; returns the length of a dotted
+quarter-note triplet and &quot;32nd&quot; returns 1/32.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000125.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000125.html');return false;">
+          <span class="method-name">read</span><span class="method-args">(io, proc = nil) {|track, num_tracks, index| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Reads a <a href="../MIDI.html">MIDI</a> stream.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <span class="method-name">tempo</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Sequence.html#M000117">beats_per_minute</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000116.html');return false;">
+          <span class="method-name">time_signature</span><span class="method-args">(numer, denom, clocks, qnotes)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the time signature.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="Sequence.src/M000126.html" target="Code" class="method-signature"
+            onclick="popupCode('Sequence.src/M000126.html');return false;">
+          <span class="method-name">write</span><span class="method-args">(io, proc = nil) {|track, num_tracks, index| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Writes to a <a href="../MIDI.html">MIDI</a> stream.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
