@@ -5,17 +5,136 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Songs: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'style' %>
-  <%= javascript_include_tag :defaults %>
-<%#= javascript_include_tag "prototype", "effects" %>
-<%= javascript_include_tag "slider"%>
+
+<!--Css Paths -->
+<%= stylesheet_link_tag 'widget' %>
+<%= stylesheet_link_tag 'ui.all' %>
+
+<!-- Javascript Paths-->
 <%= javascript_include_tag "midi_slider.js" %>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "ui.core.js" %>
+<%= javascript_include_tag "dialog.js" %>
+<%= javascript_include_tag "resizable.js" %>
+<%= javascript_include_tag "draggable.js" %>
+<%= javascript_include_tag "ui.slider.js" %> 
+
+<script>
+ $(document).ready(function(){
+   $("#example").dialog();
+ });
+</script>
+
+
+<script>
+ $(document).ready(function(){
+   $("#player").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example1").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example2").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example3").dialog();
+ });
+</script>
+
+	<script type="text/javascript">
+	$(function() {
+		$("#slider0").slider({
+			range: "min",
+			value: 60
+		});
+		$("#slider1").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 88
+		});
+		$("#slider2").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 77
+		});
+		$("#slider3").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 55
+		});
+		$("#slider4").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 33
+		});
+		$("#slider5").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 40
+		});
+		$("#slider6").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 45
+		});
+		$("#slider7").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 70
+		});
+		
+	});
+	
+	</script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#slider9").slider({
+			range: "min",
+			value: 60
+		});
+	});
+	</script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#slider10").slider({
+				range: "min",
+				value: 60
+			});
+		});
+		</script>
+		
+		<!-- Instr Arp  -->
+		<script type="text/javascript">
+			$(function() {
+				$("#slider11").slider({
+					range: "min",
+					value: 60
+				});
+			});
+			</script>
+
+
+
+
+
 </head>
 <body>
-  <div id="drag_item">
-    <div id="container">
-     <%= yield %>
-    </div>
+ 
+  
+
+      <%= yield %>
+ 
     
     
     <script type="text/javascript">
@@ -30,4 +149,4 @@ pageTracker._trackPageview();
     
  </body>
 </html>
-<%= draggable_element "drag_item" %>
+

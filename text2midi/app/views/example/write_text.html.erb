@@ -1,19 +1,129 @@
 <!-- This is the start of the instrument widget -->
-<div id="content_top">
- <h2>Within Literature there are endless sonic possibilities</h2>
+
+<!-- Widgets starts Here -->	
+
+
+<!-- Master Volume System -->
+<div id="player" class="flora" title="Player">
+<h3>This where the midi player appear when song is generated</h3>
+
+</div>
+</div>
+
+
+<div id="example3" class="flora" title="Arpeggation">
+	<form action="#">
+		
+
+		<select id="scales">
+			<option value="">Choose a Scale</option>
+			<option value"">Major</option>
+			<option value"">Minor</option>
+			<option value"">Harmonic</option>
+			<option value"">Dimished</option>
+			<option value"">Blues</option>
+		</select>
+	
+		<select id="duration">
+			<option value="">Choose a Duration</option>
+			<option value="whole">whole</option>
+			<option value="half">half</option>
+			<option value="quarter">quarter</option>
+			<option value="8th">8th</option>
+			<option value="16th">16th</option>
+			<option value="32nd">32nd</option>
+		</select>
+		
+		<b>instrument</b>
+		<br/>
+		<div id="slider11" style="height:10px; margin:10px"></div>
+		
+		</form>
+		</div></div>
+
+
+<div id="example" class="flora" title="Volume System">
+<p class="ui-state-default ui-corner-all" style="padding:3px;margin-top:2em;">
+					<span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+					Volume Controls
+					</p>
+					<center>
+					<b>Master Volume</b>
+									<div id="slider0" style="height:10px; margin:10px"></div></center>
+
+				<b>ch1</b>	<div id="slider1" style="height:120px; float:left; margin:10px"></div>
+					<b>ch2</b>	<div id="slider2" style="height:120px; float:left; margin:10px"></div>
+						<b>ch3</b><div id="slider3" style="height:120px; float:left; margin:10px"></div>
+						<b>ch4</b><div id="slider4" style="height:120px; float:left; margin:10px"></div>
+						<b>ch5</b><div id="slider5" style="height:120px; float:left; margin:10px"></div>
+						<b>ch6</b><div id="slider6" style="height:120px; float:left; margin:10px"></div>
+					<b>ch7</b><div id="slider7" style="height:120px; float:left; margin:10px"></div>
+</div>
+</div>
+
+
+<!-- Text2Midi Converter -->
+<div id="example1" class="flora" title="Text 2 Midi Converter">
+<form action="#">
+<p><textarea id="textArea" rows="5" cols="20">enter your text here</textarea></p>
+<select id="duration">
+	<option value="">Choose a Duration</option>
+	<option value="whole">whole</option>
+	<option value="half">half</option>
+	<option value="quarter">quarter</option>
+	<option value="8th">8th</option>
+	<option value="16th">16th</option>
+	<option value="32nd">32nd</option>
+</select>
+<br/>
+<b>instrument</b>
+<br/>
+<div id="slider10" style="height:10px; margin:10px"></div>
+<br/>
+</form>
+</div>
+</div>
+
+
+<!-- Global Settings System -->
+<div id="example2" class="flora" title="Global Settings"><br/>
+<form action="#">
+<center>
+Track Title
+<input class="name" type="text" size="13"/>	
+<br/>
+<tr><b>Key</b></tr>	
+<tr><select style="width:50px" id="key">
+		<option value"0">C</option>
+		<option value"1">C#</option>
+		<option value"2">D</option>
+		<option value"3">D#</option>
+		<option value"4">E</option>
+		<option value"5">F</option>
+		<option value"6">F#</option>
+		<option value"7">G</option>
+		<option value"8">G#</option>
+		<option value"9">A</option>
+		<option value"10">A#</option>
+		<option value"11">B</option>
+	</select>
+	</tr>
+	<br/>
+<b> Tempo </b>						
+<div id="slider9" style="height:10px; margin:10px"></div>
+<button type="button" onclick="submit">Generate a new Instrument</button>
+<button type="button" onclick="submit">Compose Track</button>
+</form>
+</center>
+</div>
+</div>
+
+
 <%= link_to_unless_current "Generate Music", :controller => "example" , :action => "write_text" %> 
 <%= link_to_unless_current "Theory", :controller => "main", :action => "theory" %>
 <%= link_to_unless_current "About", :controller => "main", :action => "about" %>
-</div>
 
-<div id="content">
-<center>
-<b>The Tempo and Instruments can be changed by using the Sliders
- This site uses Ajax so if the slider don't work turn on your javascript
-</b>
- 
-</center>
-<div style="margin-left:220px">
+
 
 <br/>
  <h2>Text 2 Midi Converter</h2>
@@ -42,10 +152,6 @@
   </div><br/><br/>
 <div id="instrument-name">&nbsp;</div>
 
-
-
-
-
 <span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
 <br/><br/>
 </div>
@@ -55,37 +161,3 @@
 <div id="midi_result">
 </div>
 </div>
-
-<!-- Controls the The slider info -->
-<script type="text/javascript" language="javascript">
-// <![CDATA[
-// horizontal slider control with preset values
-  new Control.Slider('handle1', 'track1', {
-    range: $R(40, 200),
-    values: [<%= (40..200).to_a.join(',') %>],
-    sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-    onSlide: function(v){ $('debug1').innerHTML = 'tempo: ' + v; $('tempo').value = v; },
-    onChange: function(v){ $('debug1').innerHTML = 'tempo is : ' + v }
-  });
-  
-  new Control.Slider('handle2', 'track2', {
-    range: $R(1,128),
-    values: [<%= (1..128).to_a.join(',') %>],
-    sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-    onSlide: function(v){ setBox(v); $('instr').value = v; },
-    onChange: function(v){ setBox(v); $('instr').value = v; }
-  });
-  
-  // new Control.Slider('handle3', 'track3', {
-  //  range: $R(1,32),
-  //  values: ["",2,4,8,16,32],
-  //  sliderValue: 1, // won't work if set to 0 due to a bug(?) in script.aculo.us
-  //  onSlide: function(v){ $('debug3').innerHTML = 'duration: ' + v; $('dur').value = v; },
-  //  onChange: function(v){ $('debug3').innerHTML = 'duration is: ' + v }
-  // });
-
-  
-// ]]>
-</script>
-
-
