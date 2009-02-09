@@ -116,7 +116,6 @@
 </div>
 </div>
 
-
 <!-- Text2Midi Converter -->
 <div id="example1" class="flora" title="Text 2 Midi Converter">
 	<h2>Text 2 Midi Converter</h2>
@@ -125,8 +124,10 @@
 	  <%= hidden_field_tag 'tempo', 140 %>
 	  <%= hidden_field_tag 'instr', 0 %>
 	  <!-- <%= hidden_field_tag 'dur', "quarter" %> -->
-	
-		<span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
+	<br/>
+	Instrument
+	<div id="slider0" style="height:10px; margin:10px"></div>
+	 <br><span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
 	</div>
 </div>
 </div>
@@ -146,8 +147,8 @@
 <center>
 Track Title
 <input class="name" type="text" size="13"/>	
-<br/>
-<tr><b>Key</b></tr>	
+<br/><br/>
+<tr>Key</tr>	
 <tr><select style="width:50px" id="key">
 		<option value"0">C</option>
 		<option value"1">C#</option>
@@ -164,10 +165,8 @@ Track Title
 	</select>
 	</tr>
 	<br/>
-<b> Tempo </b>						
+Tempo 						
 <div id="slider9" style="height:10px; margin:10px"></div>
-<button type="button" onclick="submit">Generate a new Instrument</button>
-<button type="button" onclick="submit">Compose Track</button>
 </form>
 </center>
 </div>

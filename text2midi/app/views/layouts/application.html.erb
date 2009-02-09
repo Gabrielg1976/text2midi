@@ -7,28 +7,21 @@
   <title>Songs: <%= controller.action_name %></title>
 
 <!--Css Paths -->
+<%= stylesheet_link_tag 'main' %>
 <%= stylesheet_link_tag 'widget' %>
 <%= stylesheet_link_tag 'ui.all' %>
-
 <!-- Javascript Paths-->
 <%= javascript_include_tag "midi_slider.js" %>
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "ui.core.js" %>
-<%= javascript_include_tag "dialog.js" %>
 <%= javascript_include_tag "ui.dialog.js" %>
-<%= javascript_include_tag "resizable.js" %>
 <%= javascript_include_tag "ui.draggable.js" %>
 <%= javascript_include_tag "ui.slider.js" %> 
 </head>
 <body>
- 
-  
+<%= yield %>
 
-      <%= yield %>
- 
-    
-    
-    <script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>

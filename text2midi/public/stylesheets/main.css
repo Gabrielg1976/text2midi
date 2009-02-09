@@ -1,68 +1,15 @@
-body{
-	font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
-	width:100%;
-	height:100%;
-	margin:0px;
-	padding:0px;
-	text-align:center;
-	background-color:#DFDBC3;	
-	font-size:0.9em;	
-}
-#mainContainer{
-	width:760px;
-	margin:0 auto;
-	text-align:left;	
-	background-color:#FFF;
-	border:1px solid #317082;
-	padding:5px;
-}
-#mainContainer img{
-	padding:3px;
-}
-
-a.link {
+body {
+	width:70%;
+	background-color:black;
 	color:black;
+	font-size:14px;
 }
 
-#leftMenu{
-	width:145px;
-	float:left;
-	background-color:#DDD;
-	border:1px dotted #000;
-	padding:2px;
-	height:600px;
-	margin-left:2px;
-}
-#leftMenu ul{
-	margin:2px;
-}
-#leftMenu ul li{
-	list-style-type:none;
-}
-#leftMenu ul li a{
-	color:#000;
-	font-weight:bold;
-}
-#mainContent{
-	width:595px;
-	float:center;
-	padding-left:10px;
-}
-/*.clear{
-	clear:both;*/
+h1,h2,h3,h4,h5{
+	font-size:18px;
 }
 
-h2,h3,h4{
-	margin-bottom:5px;
-	margin-top:0px;
+.songlist {
+ color:green;
 }
 
-
-/*
- The below is to design the  instruments widget*/
-
-.instrumentfg1{
-  background-image:url("/images/splayer.jpg")}
-
-.instrumentfg{
-  background-image:url("/images/bigbackgreen.jpg")}
