@@ -1,3 +1,109 @@
+
+<script>
+ $(document).ready(function(){
+   $("#example").dialog();
+ });
+</script>
+
+
+<script>
+ $(document).ready(function(){
+   $("#player").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example1").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example2").dialog();
+ });
+</script>
+
+<script>
+ $(document).ready(function(){
+   $("#example3").dialog();
+ });
+</script>
+
+	<script type="text/javascript">
+	$(function() {
+		$("#slider0").slider({
+			range: "min",
+			value: 60
+		});
+		$("#slider1").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 88
+		});
+		$("#slider2").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 77
+		});
+		$("#slider3").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 55
+		});
+		$("#slider4").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 33
+		});
+		$("#slider5").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 40
+		});
+		$("#slider6").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 45
+		});
+		$("#slider7").slider({
+			orientation: "vertical",
+			range: "min",
+			value: 70
+		});
+		
+	});
+	
+	</script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#slider9").slider({
+			range: "min",
+			value: 60
+		});
+	});
+	</script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#slider10").slider({
+				range: "min",
+				value: 60
+			});
+		});
+		</script>
+		
+		<!-- Instr Arp  -->
+		<script type="text/javascript">
+			$(function() {
+				$("#slider11").slider({
+					range: "min",
+					value: 60
+				});
+			});
+			</script>
+
 <!-- This is the start of the instrument widget -->
 
 <!-- Widgets starts Here -->	
@@ -5,68 +111,26 @@
 
 <!-- Master Volume System -->
 <div id="player" class="flora" title="Player">
-<h3>This where the midi player appear when song is generated</h3>
-
-</div>
-</div>
-
-
-<div id="example3" class="flora" title="Arpeggation">
-	<form action="#">
-		
-
-		<select id="scales">
-			<option value="">Choose a Scale</option>
-			<option value"">Major</option>
-			<option value"">Minor</option>
-			<option value"">Harmonic</option>
-			<option value"">Dimished</option>
-			<option value"">Blues</option>
-		</select>
-	
-		<select id="duration">
-			<option value="">Choose a Duration</option>
-			<option value="whole">whole</option>
-			<option value="half">half</option>
-			<option value="quarter">quarter</option>
-			<option value="8th">8th</option>
-			<option value="16th">16th</option>
-			<option value="32nd">32nd</option>
-		</select>
-		
-		<b>instrument</b>
-		<br/>
-		<div id="slider11" style="height:10px; margin:10px"></div>
-		
-		</form>
-		</div></div>
-
-
-<div id="example" class="flora" title="Volume System">
-<p class="ui-state-default ui-corner-all" style="padding:3px;margin-top:2em;">
-					<span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
-					Volume Controls
-					</p>
-					<center>
-					<b>Master Volume</b>
-									<div id="slider0" style="height:10px; margin:10px"></div></center>
-
-				<b>ch1</b>	<div id="slider1" style="height:120px; float:left; margin:10px"></div>
-					<b>ch2</b>	<div id="slider2" style="height:120px; float:left; margin:10px"></div>
-						<b>ch3</b><div id="slider3" style="height:120px; float:left; margin:10px"></div>
-						<b>ch4</b><div id="slider4" style="height:120px; float:left; margin:10px"></div>
-						<b>ch5</b><div id="slider5" style="height:120px; float:left; margin:10px"></div>
-						<b>ch6</b><div id="slider6" style="height:120px; float:left; margin:10px"></div>
-					<b>ch7</b><div id="slider7" style="height:120px; float:left; margin:10px"></div>
+	<div id="midi_result">
+	</div>
 </div>
 </div>
 
 
 <!-- Text2Midi Converter -->
 <div id="example1" class="flora" title="Text 2 Midi Converter">
-<form action="#">
-<p><textarea id="textArea" rows="5" cols="20">enter your text here</textarea></p>
-<select id="duration">
+	<h2>Text 2 Midi Converter</h2>
+	<div id="midi_form">
+	 <%= text_area_tag "midi_text", "put text here" %>
+	  <%= hidden_field_tag 'tempo', 140 %>
+	  <%= hidden_field_tag 'instr', 0 %>
+	  <!-- <%= hidden_field_tag 'dur', "quarter" %> -->
+	
+		<span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
+	</div>
+</div>
+</div>
+<!-- <select id="duration">
 	<option value="">Choose a Duration</option>
 	<option value="whole">whole</option>
 	<option value="half">half</option>
@@ -74,16 +138,7 @@
 	<option value="8th">8th</option>
 	<option value="16th">16th</option>
 	<option value="32nd">32nd</option>
-</select>
-<br/>
-<b>instrument</b>
-<br/>
-<div id="slider10" style="height:10px; margin:10px"></div>
-<br/>
-</form>
-</div>
-</div>
-
+</select> -->
 
 <!-- Global Settings System -->
 <div id="example2" class="flora" title="Global Settings"><br/>
@@ -119,45 +174,8 @@ Track Title
 </div>
 
 
+
+
 <%= link_to_unless_current "Generate Music", :controller => "example" , :action => "write_text" %> 
 <%= link_to_unless_current "Theory", :controller => "main", :action => "theory" %>
 <%= link_to_unless_current "About", :controller => "main", :action => "about" %>
-
-
-
-<br/>
- <h2>Text 2 Midi Converter</h2>
-<div id="midi_form">
-<%= text_area_tag "midi_text", "put text here" %>
-  <%= hidden_field_tag 'tempo', 140 %>
-  <%= hidden_field_tag 'instr', 0 %>
-  <!-- <%= hidden_field_tag 'dur', "quarter" %> -->
-</div>
-
-<br/><br/>
-<b>Tempo<b/><br/><br/>
-
-<div id="track1" style="width:100px; background-color:#ccc; height:10px;">
-<div id="handle1" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
-<br/><br/>
-<p id="debug1">&nbsp;</p>
-</div>
-<p>&nbsp;</p>
-<br/><br/>
-<b>Instrument</b>
-<br/><br/>
-
-<div id="track2" style="width:138px; background-color:#ccc; height:10px;">
-    <div id="handle2" style="width:10px; height:15px; background-color:#000; cursor:move;"></div>
-  </div><br/><br/>
-<div id="instrument-name">&nbsp;</div>
-
-<span><%= link_to_remote "Convert Text", :update => "midi_result", :url => {:controller => :example, :action => :make_midi}, :submit => 'midi_form' %></span>
-<br/><br/>
-</div>
-</div>
-
-<!-- This is the end of the widget functions -->
-<div id="midi_result">
-</div>
-</div>
